@@ -1,0 +1,364 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>算法学习：回文串 | Silver&#39;s Codle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Silver">
+    
+    <meta name="description" itemprop="description" content="所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Silver9512" />
+    <meta name="twitter:title" content="算法学习：回文串 | Silver&#39;s Codle" />
+      
+        <meta name="twitter:description" content="所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。" />
+      
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Silver&#39;s Codle" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favo.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/codle.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/codle.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Silver&#39;s Codle" title="Silver&#39;s Codle"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Silver&#39;s Codle">Silver&#39;s Codle</a></h1>
+				<h2 class="blog-motto">无比芜杂的心绪</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:codle.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/03/ispalindrome/" title="算法学习：回文串" itemprop="url">算法学习：回文串</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://codle.net" title="Silver">Silver</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-11-03T09:57:40.000Z" itemprop="datePublished">2015-11-03</time>
+    更新日期:<time datetime="2015-11-03T10:01:28.874Z" itemprop="dateModified">2015-11-03</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法学习：回文串"><span class="toc-number">1.</span> <span class="toc-text">算法学习：回文串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断回文"><span class="toc-number">1.2.</span> <span class="toc-text">判断回文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析与解法："><span class="toc-number">1.2.2.</span> <span class="toc-text">分析与解法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解法一：两头向中间扫"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">解法一：两头向中间扫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法二：中间向两头扫"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">解法二：中间向两头扫</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链表判断回文"><span class="toc-number">1.3.</span> <span class="toc-text">链表判断回文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析与算法"><span class="toc-number">1.3.2.</span> <span class="toc-text">分析与算法</span></a></li></ol></li></ol></li></ol>
+		</div>
+		
+		<h1 id="算法学习：回文串">算法学习：回文串</h1><h2 id="前言">前言</h2><p>所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。</p>
+<h2 id="判断回文">判断回文</h2><h3 id="题目描述">题目描述</h3><p>给定一个字符串，如何判断这个字符串是否是回文串。</p>
+<h3 id="分析与解法：">分析与解法：</h3><h4 id="解法一：两头向中间扫">解法一：两头向中间扫</h4><p>找到这个字符串的开头和结尾，然后从两端开始向中间扫描，扫描过程中，如果对应的字符都相同，那么说明这个字符串回文。当前端超过或者等于后端时候结束扫描。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!s.size())</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> back = s.size() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> front = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (front &lt; back) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[front]!=s[back])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		front++;</span><br><span class="line">		back--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度O(n),空间复杂度O(1)。</p>
+<h4 id="解法二：中间向两头扫">解法二：中间向两头扫</h4><p>找到中间元素，然后向两端以此扫描查看是否相同，难点在于找到中点后的起点位置，字符串长度是奇数或者偶数是不同的。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!s.size())</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> n = s.size();</span><br><span class="line">	<span class="keyword">int</span> front, back;</span><br><span class="line">	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		front = n / <span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">		back = n / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		front = back = n / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span> (; front &gt;= <span class="number">0</span>; front--, back++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[front] != s[back])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间空间复杂度和解法一相同，分别是O(n)和O(1)。</p>
+<h2 id="链表判断回文">链表判断回文</h2><h3 id="题目描述-1">题目描述</h3><p>判断一条单向链表是不是回文</p>
+<h3 id="分析与算法">分析与算法</h3><p>由于是单链表，单向传递无法使用两个指针来扫描。可以扫描一次找到中点，然后再来进行一次扫描，从开头和中点来开始扫描进行比较，但是这样扫描了两次会增加时间复杂度。我们这里考虑使用快慢指针的方法，用两个指针来开始扫描，一个指针每次递增一步，一个每次递增两步。当快的指针到达链表尾部是，慢的指针就到达了链表的中点。<br>–暂封待更–</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/C/">C++</a><a href="/tags/算法/">算法</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://codle.net/2015/11/03/ispalindrome/" data-title="算法学习：回文串 | Silver&#39;s Codle" data-tsina="2200232172" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/10/29/binary-tree/"  title="数据结构：二叉树（C++版）">
+ <strong>NEXT:</strong><br/> 
+ <span>数据结构：二叉树（C++版）
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法学习：回文串"><span class="toc-number">1.</span> <span class="toc-text">算法学习：回文串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断回文"><span class="toc-number">1.2.</span> <span class="toc-text">判断回文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析与解法："><span class="toc-number">1.2.2.</span> <span class="toc-text">分析与解法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解法一：两头向中间扫"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">解法一：两头向中间扫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法二：中间向两头扫"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">解法二：中间向两头扫</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链表判断回文"><span class="toc-number">1.3.</span> <span class="toc-text">链表判断回文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析与算法"><span class="toc-number">1.3.2.</span> <span class="toc-text">分析与算法</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/博客相关/" title="博客相关">博客相关<sup>1</sup></a></li>
+		
+			<li><a href="/categories/数据结构/" title="数据结构">数据结构<sup>1</sup></a></li>
+		
+			<li><a href="/categories/算法学习/" title="算法学习">算法学习<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C/" title="C++">C++<sup>2</sup></a></li>
+		
+			<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/数据结构/" title="数据结构">数据结构<sup>1</sup></a></li>
+		
+			<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Silver: <br/>
+			A Coder  ;  A Writer;</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/323327275" target="_blank" title="weibo"></a>
+		
+		
+		<a href="https://twitter.com/Silver9512" target="_blank" title="twitter"></a>
+		
+		
+		<a href="https://github.com/colorlesssilver" target="_blank" title="github"></a>
+		
+		
+		<a href="https://www.facebook.com/try.silver.3" target="_blank" title="facebook"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="http://codle.net" target="_blank" title="Silver">Silver</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"colorless"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
