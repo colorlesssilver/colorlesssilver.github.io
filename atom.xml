@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2015-11-03T10:01:28.874Z</updated>
+  <updated>2015-11-05T08:11:37.004Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://codle.net/2015/11/03/ispalindrome/"/>
     <id>http://codle.net/2015/11/03/ispalindrome/</id>
     <published>2015-11-03T09:57:40.000Z</published>
-    <updated>2015-11-03T10:01:28.874Z</updated>
+    <updated>2015-11-05T08:11:37.004Z</updated>
     <content type="html"><![CDATA[<h1 id="算法学习：回文串">算法学习：回文串</h1><h2 id="前言">前言</h2><p>所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。</p>
-<h2 id="判断回文">判断回文</h2><h3 id="题目描述">题目描述</h3><p>给定一个字符串，如何判断这个字符串是否是回文串。</p>
+<h2 id="判断回文">判断回文</h2><h3 id="题目描述">题目描述</h3><p>给定一个字符串，如何判断这个字符串是否是回文串。<br><a id="more"></a></p>
 <h3 id="分析与解法：">分析与解法：</h3><h4 id="解法一：两头向中间扫">解法一：两头向中间扫</h4><p>找到这个字符串的开头和结尾，然后从两端开始向中间扫描，扫描过程中，如果对应的字符都相同，那么说明这个字符串回文。当前端超过或者等于后端时候结束扫描。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!s.size())</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> back = s.size() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> front = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (front &lt; back) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[front]!=s[back])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		front++;</span><br><span class="line">		back--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>时间复杂度O(n),空间复杂度O(1)。</p>
 <h4 id="解法二：中间向两头扫">解法二：中间向两头扫</h4><p>找到中间元素，然后向两端以此扫描查看是否相同，难点在于找到中点后的起点位置，字符串长度是奇数或者偶数是不同的。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!s.size())</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> n = s.size();</span><br><span class="line">	<span class="keyword">int</span> front, back;</span><br><span class="line">	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		front = n / <span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">		back = n / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		front = back = n / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span> (; front &gt;= <span class="number">0</span>; front--, back++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[front] != s[back])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -47,13 +47,13 @@
     <link href="http://codle.net/2015/10/29/binary-tree/"/>
     <id>http://codle.net/2015/10/29/binary-tree/</id>
     <published>2015-10-29T12:48:30.000Z</published>
-    <updated>2015-11-03T07:47:01.439Z</updated>
+    <updated>2015-11-05T08:11:04.923Z</updated>
     <content type="html"><![CDATA[<h1 id="数据结构：二叉树（C++版）">数据结构：二叉树（C++版）</h1><h2 id="二叉树的定义">二叉树的定义</h2><p>二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。<br>其中：</p>
 <ul>
 <li>二叉树第i层至多有2^(i-1)个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有2^0=1个节点）；</li>
 <li>深度为k的二叉树至多有2^k-1个节点（即是说1-k层全满的情况，那么每层分别有2^0,2^1,2^2…2^(k-1)个节点，等比数列求和可得2^k-1）；</li>
 </ul>
-<p>一棵深度为k，且有2^k-1个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
+<p>一棵深度为k，且有2^k-1个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。<br><a id="more"></a></p>
 <h2 id="二叉树的储存">二叉树的储存</h2><h3 id="链式存储">链式存储</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct <span class="keyword">Node</span><span class="identifier"> </span><span class="title">&#123;  </span><br><span class="line">	ElemType</span> val;	//本结点储存值  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* left</span>;     //结点指针用于储存左子树  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* right</span>;	//结点指针用于储存右子树  </span><br><span class="line">        //构造函数，方便调用关键字new来构造节点  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">(ElemType</span> v=<span class="number">0</span>) &#123;  </span><br><span class="line">		val = v;  </span><br><span class="line">		left = right = NULL;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>链式存储也是最常见的二叉树存储方式</p>
 <h3 id="数组存储">数组存储</h3><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ElemType <span class="keyword">val</span>[T];    <span class="comment">//T=2^k-1 k为二叉树深度</span></span><br></pre></td></tr></table></figure>
@@ -89,8 +89,9 @@
     <link href="http://codle.net/2015/10/29/how-to-build-hexo/"/>
     <id>http://codle.net/2015/10/29/how-to-build-hexo/</id>
     <published>2015-10-29T07:08:54.000Z</published>
-    <updated>2015-10-30T08:19:51.212Z</updated>
+    <updated>2015-11-05T08:10:34.588Z</updated>
     <content type="html"><![CDATA[<h1 id="使用hexo搭建个人博客">使用hexo搭建个人博客</h1><h2 id="前言">前言</h2><p>折腾了两天终于做好了这个博客站，相比于wordpress+虚拟空间的组合，使用Github Page+hexo无疑显得要更加轻便与稳定。<br>下面就来谈一谈是如何在Github上搭建一个hexo博客的。</p>
+<a id="more"></a>
 <h2 id="搭建环境">搭建环境</h2><p>hexo是一个基于node.js的静态博客框架，因此电脑需要安装node.js环境，同时也需要Git软件用于上传博客文件</p>
 <ul>
 <li><a href="http://nodejs.org" target="_blank" rel="external">Node.js</a></li>
