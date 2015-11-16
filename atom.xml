@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2015-11-12T07:22:26.808Z</updated>
+  <updated>2015-11-16T07:22:06.505Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[动态规划]]></title>
+    <link href="http://codle.net/2015/11/16/dp-pdf/"/>
+    <id>http://codle.net/2015/11/16/dp-pdf/</id>
+    <published>2015-11-16T07:10:32.000Z</published>
+    <updated>2015-11-16T07:22:06.505Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅</p>
+<h2 id="什么是动态规划">什么是动态规划</h2><blockquote>
+<p>“通过将复杂问题分解为简单的子问题的方法” ————维基百科</p>
+</blockquote>
+<h2 id="动态规划的步骤">动态规划的步骤</h2><ol>
+<li>定义子问题</li>
+<li>找到子问题的递推关系</li>
+<li>发现并解决每种基本情况</li>
+</ol>
+<h2 id="样例1:_区间型动态规划">样例1: 区间型动态规划</h2><h3 id="问题描述:">问题描述:</h3><p>给一个数n，求有多少种方案能通过1，3，4求和得到n？</p>
+<h3 id="示例:">示例:</h3><p>对于一个数n = 5,答案是6<br>　５　＝　１　＋　１　＋　１　＋　１　＋　１<br>　　　＝　１　＋　１　＋　３<br>　　　＝　１　＋　３　＋　１<br>　　　＝　３　＋　１　＋　１<br>　　　＝　１　＋　４<br>　　　＝　４　＋　１</p>
+<h3 id="定义子问题">定义子问题</h3><p>设$D_n$是用1,3,4求和得到n的方案总数</p>
+<h3 id="找到子问题的递推关系">找到子问题的递推关系</h3><ul>
+<li>思考一种可能的解决方案：n = $x_1 + x_2 + … + x_m$</li>
+<li>如果$x_m$ = 1，那么剩下就需要求和至n-1</li>
+<li>因此，以$x<em>m$ = 1结尾的方案数量就等同于$D</em>{n-1}$</li>
+<li>对其他几种选择也使用上面的方法($x_m=3，x_m=4$)</li>
+</ul>
+<p>那么递推关系就出来:<br>　　$D<em>n$ = D</em>{n-1} + D<em>{n-3} + D</em>{n-4}$
+　　</p>
+<h3 id="解决基本情况">解决基本情况</h3><ul>
+<li>$D_0 = 1$</li>
+<li>$D_n = 0$ 用于初始化每个n的方案总数</li>
+<li>当然，我们也可以设置：$D_0 = D_1 = D_2 = 1 且 D_3 = 2$</li>
+</ul>
+<h3 id="实现">实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D[<span class="number">0</span>] = D[<span class="number">1</span>] = D[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">D[<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">4</span>; i &lt;= n; i++)</span><br><span class="line">    D[i] = D[i-<span class="number">1</span>] + D[i-<span class="number">3</span>] + D[i-<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="例题:_POJ_2663:Tri_Tiling">例题: POJ 2663:Tri Tiling</h2><h3 id="问题描述:-1">问题描述:</h3><p>给一个数n，找出有多少种方案使用2 × 1的方块来填充3 × n的矩形</p>
+<h3 id="示例：">示例：</h3><p>这里有一种填充n = 12的可行方案<br><img src="http://poj.org/images/2663_1.jpg" alt="&quot;n = 12&quot;"></p>
+<h3 id="定义子问题-1">定义子问题</h3><p>设$D_n$是填充3 × n矩形的总方案数</p>
+<h3 id="找出递推关系">找出递推关系</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p>本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅</p>
+<h2 id="什么是动态规划">什么是动态规划</h2><blockquote>
+<p>“通过将复杂问题分解为简单的子问题的方法” ———]]>
+    </summary>
+    
+      <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[算法学习：回文串]]></title>
