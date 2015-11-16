@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2015-11-16T07:22:06.505Z</updated>
+  <updated>2015-11-16T12:45:26.743Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -15,11 +15,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[hihoCoder第七十二周：Disk Storage]]></title>
+    <link href="http://codle.net/2015/11/16/hiho72/"/>
+    <id>http://codle.net/2015/11/16/hiho72/</id>
+    <published>2015-11-16T12:44:23.000Z</published>
+    <updated>2015-11-16T12:45:26.743Z</updated>
+    <content type="html"><![CDATA[<h1 id="hihoCoder第七十二周：Disk_Storage">hihoCoder第七十二周：Disk Storage</h1><h2 id="题目">题目</h2><p><img src="http://media.hihocoder.com//problem_images/20150103/14202824928356.png" alt=""></p>
+<p>Little Hi and Little Ho have a disk storage. The storage’s shape is a truncated cone of height H. R+H is radius of top circle and R is radius of base circle.<br>Little Ho buys N disks today. Every disk is a cylinder of height 1. Little Ho wants to put these disk into the storage under below constraints:</p>
+<ol>
+<li>Every disk is placed horizontally. Its axis must coincide with the axis of storage.</li>
+<li>Every disk is either place on the bottom surface or on another disk.</li>
+<li>Between two neighboring disks in the storage, the upper one’s radius minus the lower one’s radius must be less than or equal to M.</li>
+</ol>
+<p>Little Ho wants to know how many disks he can put in the storage at most.</p>
+<p>输入<br>Input contains only one testcase.<br>The first line contains 4 integers: N(1 &lt;= N &lt;= 100000), M, H, R(1 &lt;= M, R, H &lt;= 100000000).<br>The second line contains N integers, each number prepresenting the radius of a disk. Each radius is no more than 100000000.</p>
+<p>输出<br>Output the maximum possible number of disks can be put into the storage.</p>
+<p>样例输入<br>5 1 10 3<br>1 3 4 5 10<br>样例输出<br>4</p>
+<h2 id="大意">大意</h2><p>在一个圆台中装圆形碟片，求问满足下面要求后最多能放几个圆碟：</p>
+<ul>
+<li>每个圆碟都放在中轴线上，每个圆碟都是挨着的</li>
+<li>圆碟要么放在圆碟上要么放在水平面上</li>
+<li>相邻两个圆碟，上面那个的半径减去下面那个的半径必须小于等于M</li>
+</ul>
+<h2 id="解题思路">解题思路</h2><p>上面那个减去下面那个半径小于等于M，并没有说是绝对值，因此从下到上假设摆成3-&gt;2-&gt;1这种也是满足要求的，因为都是负数小于M。因此解题思路就很明显了，先将圆碟按照半径排序，遍历直到有半径等于或者稍小于底面半径圆盘为止，显然之前已经被遍历的圆碟是一定能放的（只用按照从大到小的顺序摆在最上面即可），那么就从这个圆盘开始，依次查找满足M和R+H条件的圆盘即可。结果摆放如图所示：<br><img src="/imgs/hiho2.png" alt=""></p>
+<h2 id="AC代码">AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a &gt; b ? b : a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, m, h, r;</span><br><span class="line">	<span class="keyword">int</span> num1, num2;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; h &gt;&gt; r;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">100001</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	sort(a, a + n);</span><br><span class="line">	num1 = a[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">if</span> (a[<span class="number">0</span>] &gt; r) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	num2 = num1;</span><br><span class="line">	cnt++;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] &gt; r + cnt)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">if</span> (a[i] - num1 &gt; m)</span><br><span class="line">			<span class="keyword">if</span> (a[i] &lt;= r) &#123;</span><br><span class="line">				num2 = a[i];</span><br><span class="line">				num1 = num2;</span><br><span class="line">				cnt = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			num1 = a[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; min(i, h) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="hihoCoder第七十二周：Disk_Storage">hihoCoder第七十二周：Disk Storage</h1><h2 id="题目">题目</h2><p><img src="http://media.hihocoder.com//problem_ima]]>
+    </summary>
+    
+      <category term="hiho" scheme="http://codle.net/tags/hiho/"/>
+    
+      <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法学习" scheme="http://codle.net/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[动态规划]]></title>
     <link href="http://codle.net/2015/11/16/dp-pdf/"/>
     <id>http://codle.net/2015/11/16/dp-pdf/</id>
     <published>2015-11-16T07:10:32.000Z</published>
-    <updated>2015-11-16T07:22:06.505Z</updated>
+    <updated>2015-11-16T12:55:07.922Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅</p>
 <h2 id="什么是动态规划">什么是动态规划</h2><blockquote>
 <p>“通过将复杂问题分解为简单的子问题的方法” ————维基百科</p>
@@ -35,10 +73,10 @@
 <h3 id="找到子问题的递推关系">找到子问题的递推关系</h3><ul>
 <li>思考一种可能的解决方案：n = $x_1 + x_2 + … + x_m$</li>
 <li>如果$x_m$ = 1，那么剩下就需要求和至n-1</li>
-<li>因此，以$x<em>m$ = 1结尾的方案数量就等同于$D</em>{n-1}$</li>
+<li>因此，以$x_m = 1$结尾的方案数量就等同于$D_{n-1}$ </li>
 <li>对其他几种选择也使用上面的方法($x_m=3，x_m=4$)</li>
 </ul>
-<p>那么递推关系就出来:<br>　　$D<em>n$ = D</em>{n-1} + D<em>{n-3} + D</em>{n-4}$
+<p>那么递推关系就出来:<br>$D_n = D_{n-1} + D_{n-3} + D_{n-4}$
 　　</p>
 <h3 id="解决基本情况">解决基本情况</h3><ul>
 <li>$D_0 = 1$</li>

@@ -32,7 +32,7 @@
 样例1: 区间型动态规划问题描述:给一个数n，求有多少种方案能通过1，3，4求和得到n？
 示例:对于一个数n = 5,答案是6　５　＝　１　＋　１　＋">
 <meta property="og:image" content="http://poj.org/images/2663_1.jpg">
-<meta property="og:updated_time" content="2015-11-16T07:22:06.505Z">
+<meta property="og:updated_time" content="2015-11-16T12:55:07.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划">
 <meta name="twitter:description" content="前言本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅
@@ -166,10 +166,10 @@
 <h3 id="找到子问题的递推关系">找到子问题的递推关系</h3><ul>
 <li>思考一种可能的解决方案：n = $x_1 + x_2 + … + x_m$</li>
 <li>如果$x_m$ = 1，那么剩下就需要求和至n-1</li>
-<li>因此，以$x<em>m$ = 1结尾的方案数量就等同于$D</em>{n-1}$</li>
+<li>因此，以$x_m = 1$结尾的方案数量就等同于$D_{n-1}$ </li>
 <li>对其他几种选择也使用上面的方法($x_m=3，x_m=4$)</li>
 </ul>
-<p>那么递推关系就出来:<br>　　$D<em>n$ = D</em>{n-1} + D<em>{n-3} + D</em>{n-4}$
+<p>那么递推关系就出来:<br>$D_n = D_{n-1} + D_{n-3} + D_{n-4}$
 　　</p>
 <h3 id="解决基本情况">解决基本情况</h3><ul>
 <li>$D_0 = 1$</li>
@@ -183,7 +183,7 @@
 <h3 id="找出递推关系">找出递推关系</h3>
       </div>
       <footer class="article-footer">
-        <a data-url="http://codle.net/2015/11/16/dp-pdf/" data-id="cih1minpl000gvwinp8zz09o4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://codle.net/2015/11/16/dp-pdf/" data-id="cih1yh7f7000lvwins2y4fq2y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -218,6 +218,16 @@
     
 <nav id="article-nav">
   
+    <a href="/2015/11/16/hiho72/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          hihoCoder第七十二周：Disk Storage
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+  
   
     <a href="/2015/11/03/ispalindrome/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
@@ -235,6 +245,26 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/11/16/hiho72/" class="thumbnail">
+  
+    <span style="background-image:url(http://media.hihocoder.com//problem_images/20150103/14202824928356.png
+)" alt="hihoCoder第七十二周：Disk Storage" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/算法学习/">算法学习</a></p>
+              <p class="item-title"><a href="/2015/11/16/hiho72/" class="title">hihoCoder第七十二周：Disk Storage</a></p>
+              <p class="item-date"><time datetime="2015-11-16T12:44:23.000Z" itemprop="datePublished">2015-11-16</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -325,7 +355,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -335,7 +365,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -345,7 +375,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hiho/">hiho</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -355,7 +385,7 @@
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
+      <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hiho/" style="font-size: 10px;">hiho</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
     </div>
   </div>
 
