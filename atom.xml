@@ -57,7 +57,7 @@
     <link href="http://codle.net/2015/11/16/dp-pdf/"/>
     <id>http://codle.net/2015/11/16/dp-pdf/</id>
     <published>2015-11-16T07:10:32.000Z</published>
-    <updated>2015-11-16T12:55:07.922Z</updated>
+    <updated>2015-11-19T08:20:47.653Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅</p>
 <h2 id="什么是动态规划">什么是动态规划</h2><blockquote>
 <p>“通过将复杂问题分解为简单的子问题的方法” ————维基百科</p>
@@ -95,6 +95,8 @@
     </summary>
     
       <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法学习" scheme="http://codle.net/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
