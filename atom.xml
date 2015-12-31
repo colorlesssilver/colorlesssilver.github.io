@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2015-12-28T13:28:04.237Z</updated>
+  <updated>2015-12-31T12:46:20.984Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://codle.net/2015/12/28/hiho78/"/>
     <id>http://codle.net/2015/12/28/hiho78/</id>
     <published>2015-12-28T13:23:13.000Z</published>
-    <updated>2015-12-28T13:28:04.237Z</updated>
+    <updated>2015-12-31T12:46:20.984Z</updated>
     <content type="html"><![CDATA[<h1 id="hihoCoder第七十八周：Shortest_Proper_Prefix">hihoCoder第七十八周：Shortest Proper Prefix</h1><h2 id="题目">题目</h2><p>Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequency queries which have s as a prefix are suggested. We say string s1 has string s2 as a prefix if and only if the first |s2| characters of s1 are the same as s2 where |s2| is the length of s2.</p>
 <p><img src="http://media.hihocoder.com//problem_images/20150117/14214822852319.png" alt=""></p>
 <p>These days Little Hi has been working on a way to improve the QAC performance. He collected N high-frequency queries. We say a string s is a proper prefix if there are no more than 5 collected queries have s as a prefix. A string s is a shortest proper prefix if s is a proper prefix and all the prefixes of s(except for s itself) are not proper prefixes. Little Hi wants to know the number of shortest proper prefixes given N collected queries.</p>
@@ -49,7 +49,7 @@
     
       <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法学习" scheme="http://codle.net/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+      <category term="习题集" scheme="http://codle.net/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/"/>
     
   </entry>
   
@@ -58,7 +58,7 @@
     <link href="http://codle.net/2015/11/16/hiho72/"/>
     <id>http://codle.net/2015/11/16/hiho72/</id>
     <published>2015-11-16T12:44:23.000Z</published>
-    <updated>2015-11-16T12:59:50.559Z</updated>
+    <updated>2015-12-31T12:46:29.245Z</updated>
     <content type="html"><![CDATA[<h1 id="hihoCoder第七十二周：Disk_Storage">hihoCoder第七十二周：Disk Storage</h1><h2 id="题目">题目</h2><p><img src="http://media.hihocoder.com//problem_images/20150103/14202824928356.png" alt=""></p>
 <p>Little Hi and Little Ho have a disk storage. The storage’s shape is a truncated cone of height H. R+H is radius of top circle and R is radius of base circle.<br>Little Ho buys N disks today. Every disk is a cylinder of height 1. Little Ho wants to put these disk into the storage under below constraints:</p>
 <ol>
@@ -87,16 +87,16 @@
     
       <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法学习" scheme="http://codle.net/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+      <category term="习题集" scheme="http://codle.net/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[动态规划]]></title>
+    <title><![CDATA[算法学习：动态规划]]></title>
     <link href="http://codle.net/2015/11/16/dp-pdf/"/>
     <id>http://codle.net/2015/11/16/dp-pdf/</id>
     <published>2015-11-16T07:10:32.000Z</published>
-    <updated>2015-11-19T09:20:35.426Z</updated>
+    <updated>2015-12-31T12:46:46.596Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>本文翻译自斯坦福大学的算法介绍课程PDF。英语水平不高，部分翻译可能比较生硬，还望见谅</p>
 <h2 id="什么是动态规划">什么是动态规划</h2><blockquote>
 <p>“通过将复杂问题分解为简单的子问题的方法” ————维基百科</p>
