@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2015-12-31T12:46:20.984Z</updated>
+  <updated>2016-03-13T10:43:32.077Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hihoCoder编程练习赛：A 买零食]]></title>
+    <link href="http://codle.net/2016/03/13/hiho-practice-match2-a/"/>
+    <id>http://codle.net/2016/03/13/hiho-practice-match2-a/</id>
+    <published>2016-03-13T10:41:44.000Z</published>
+    <updated>2016-03-13T10:43:32.077Z</updated>
+    <content type="html"><![CDATA[<h1 id="hihoCoder编程练习赛：A_买零食">hihoCoder编程练习赛：A 买零食</h1><h2 id="描述">描述</h2><p>小Ho很喜欢在课间去小卖部买零食。然而不幸的是，这个学期他又有在一教的课，而一教的小卖部姐姐以冷若冰霜著称。第一次去一教小卖部买零食的时候，小Ho由于不懂事买了好一大堆东西，被小卖部姐姐给了一个“冷若冰霜”的眼神，食欲都下降了很多。</p>
+<p>从那以后，小Ho就学乖了，去小卖部买东西只敢同时买3包以内的零食，并且价格加起来必须是5的整数倍，方便小卖部姐姐算价格。</p>
+<p>但是小Ho不擅长计算，所以他把小卖部里所有零食的价格以及他对这个零食的渴望度都告诉了你，希望你能够帮他计算出在不惹恼小卖部姐姐的前提下，能够买到零食的渴望度之和最高是多少？</p>
+<h2 id="输入">输入</h2><p>每个输入文件包含多组测试数据，在每个输入文件的第一行为一个整数Q，表示测试数据的组数。</p>
+<p>每组测试数据的第一行为一个正整数N，表示小卖部中零食的数量。</p>
+<p>接下来的N行，每行为一个正实数A和一个正整数B，表示这种零食的价格和小Ho对其的渴望度。</p>
+<p>一种零食仅有一包。</p>
+<p>对于100%的数据，满足1 &lt;= Q &lt;= 10，1&lt;=N&lt;=50，0&lt;A&lt;=10，1&lt;=B&lt;=100。</p>
+<p>对于100%的数据，满足A的小数部分仅可能为0.5或0。</p>
+<h2 id="输出">输出</h2><p>对于每组测试数据，输出一个整数Ans，表示小Ho可以获得最大的渴望度之和。</p>
+<h3 id="样例输入">样例输入</h3><p>1<br>4<br>0.5 6<br>4.5 7<br>5.0 4<br>2.0 9</p>
+<h3 id="样例输出">样例输出</h3><p>17</p>
+<h2 id="解题思路">解题思路</h2><p>由于N最大只有50，也就是说最多计算量是$C_{50}^3$并不大，所以考虑直接暴力求解。由于看到有两个关联量，在自己做得时候直接就考虑了关联容器map，但是这两个量都是会出现重复的，不是唯一的，所以一直WA了很久才发现这问题，还是老老实实采取数组解决比较快。</p>
+<h2 id="AC代码">AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isFloat</span><span class="params">(<span class="keyword">double</span> d)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = (<span class="keyword">int</span>)d;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">fabs</span>(d - a) &lt; <span class="number">1e-8</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> Q;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; Q;</span><br><span class="line">	<span class="keyword">while</span> (Q--) &#123;</span><br><span class="line">		<span class="keyword">int</span> N;</span><br><span class="line">		<span class="keyword">double</span> cost[<span class="number">100</span>];</span><br><span class="line">		<span class="keyword">int</span> val[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; cost[i] &gt;&gt; val[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">			<span class="keyword">double</span> c = cost[i];</span><br><span class="line">			<span class="keyword">if</span> (isFloat(c) &amp;&amp; (<span class="keyword">int</span>)c % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">				ans = max(ans, val[i]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; N; j++) &#123;</span><br><span class="line">				<span class="keyword">double</span> c = cost[i] + cost[j];</span><br><span class="line">				<span class="keyword">if</span> (isFloat(c) &amp;&amp; (<span class="keyword">int</span>)c % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">					ans = max(ans, val[i] + val[j]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; N; k++) &#123;</span><br><span class="line">					<span class="keyword">double</span> c = cost[i] + cost[j] + cost[k];</span><br><span class="line">					<span class="keyword">if</span> (isFloat(c) &amp;&amp; (<span class="keyword">int</span>)c % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">						ans = max(ans, val[i] + val[j] + val[k]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="hihoCoder编程练习赛：A_买零食">hihoCoder编程练习赛：A 买零食</h1><h2 id="描述">描述</h2><p>小Ho很喜欢在课间去小卖部买零食。然而不幸的是，这个学期他又有在一教的课，而一教的小卖部姐姐以冷若冰霜著称。第一次去一教小卖部]]>
+    </summary>
+    
+      <category term="hiho" scheme="http://codle.net/tags/hiho/"/>
+    
+      <category term="算法" scheme="http://codle.net/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="习题集" scheme="http://codle.net/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[hihoCoder第七十八周：Shortest Proper Prefix]]></title>
