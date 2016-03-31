@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-03-13T10:57:10.230Z</updated>
+  <updated>2016-03-31T02:11:15.827Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[machine-learning-introduction]]></title>
+    <link href="http://codle.net/2016/03/31/machine-learning-introduction/"/>
+    <id>http://codle.net/2016/03/31/machine-learning-introduction/</id>
+    <published>2016-03-31T02:11:15.000Z</published>
+    <updated>2016-03-31T02:11:15.827Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[hihoCoder编程练习赛：A 买零食]]></title>
