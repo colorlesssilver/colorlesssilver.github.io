@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>machine-learning-introduction | Silver&#39;s Codle</title>
+  <title>机器学习日志：介绍 | Silver&#39;s Codle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="前言最近开始学习C站上的NG的机器学习课程，会把视频中的内容写成笔记方便查阅，待学完后会将全部的笔记整理成PDF。
+监督学习（Supervised Learning）示例1:预测房价为了预测房价，某同学收集了某地区的房价数据集（如图），假设你朋友有栋750尺的房子，想知道房子在什么价格好卖掉。
+
+学习算法可以提供一些用于估计房子价格的方法，比如使用直线函数，或者使用平方函数等等方法来进行拟合。下图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="machine-learning-introduction">
+<meta property="og:title" content="机器学习日志：介绍">
 <meta property="og:url" content="http://codle.net/2016/03/31/machine-learning-introduction/index.html">
 <meta property="og:site_name" content="Silver's Codle">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-31T02:11:15.827Z">
+<meta property="og:description" content="前言最近开始学习C站上的NG的机器学习课程，会把视频中的内容写成笔记方便查阅，待学完后会将全部的笔记整理成PDF。
+监督学习（Supervised Learning）示例1:预测房价为了预测房价，某同学收集了某地区的房价数据集（如图），假设你朋友有栋750尺的房子，想知道房子在什么价格好卖掉。
+
+学习算法可以提供一些用于估计房子价格的方法，比如使用直线函数，或者使用平方函数等等方法来进行拟合。下图">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-01.png">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-02.png">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-03.png">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-04.png">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-05.png">
+<meta property="og:image" content="http://codle.net/imgs/machine-learning/01-06.png">
+<meta property="og:updated_time" content="2016-03-31T02:43:53.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="machine-learning-introduction">
-<meta name="twitter:description">
+<meta name="twitter:title" content="机器学习日志：介绍">
+<meta name="twitter:description" content="前言最近开始学习C站上的NG的机器学习课程，会把视频中的内容写成笔记方便查阅，待学完后会将全部的笔记整理成PDF。
+监督学习（Supervised Learning）示例1:预测房价为了预测房价，某同学收集了某地区的房价数据集（如图），假设你朋友有栋750尺的房子，想知道房子在什么价格好卖掉。
+
+学习算法可以提供一些用于估计房子价格的方法，比如使用直线函数，或者使用平方函数等等方法来进行拟合。下图">
   
   
     <link rel="icon" href="/imgs/favicon.png">
@@ -74,7 +89,7 @@
               
                 <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">主页</a></li>
               
-                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/习题集/">习题集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/博客相关/">博客相关</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/数据结构/">数据结构</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/算法学习/">算法学习</a></li></ul>
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/习题集/">习题集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/博客相关/">博客相关</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/数据结构/">数据结构</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/机器学习/">机器学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/算法学习/">算法学习</a></li></ul>
                   
             </ul>
             <nav id="sub-nav">
@@ -96,7 +111,7 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header">未分类</h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/机器学习/">机器学习</a></h1>
             </div>
             <div class="main-body-content">
               
@@ -108,7 +123,7 @@
           
   
     <h1 class="article-title" itemprop="name">
-      machine-learning-introduction
+      机器学习日志：介绍
     </h1>
   
 
@@ -120,19 +135,43 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        
+        <h1 id="前言">前言</h1><p>最近开始学习C站上的NG的机器学习课程，会把视频中的内容写成笔记方便查阅，待学完后会将全部的笔记整理成PDF。</p>
+<h1 id="监督学习（Supervised_Learning）">监督学习（Supervised Learning）</h1><h2 id="示例1:预测房价">示例1:预测房价</h2><p>为了预测房价，某同学收集了某地区的房价数据集（如图），假设你朋友有栋750尺的房子，想知道房子在什么价格好卖掉。</p>
+<p><img src="/imgs/machine-learning/01-01.png" alt=""></p>
+<p>学习算法可以提供一些用于估计房子价格的方法，比如使用直线函数，或者使用平方函数等等方法来进行拟合。下图给出了两种不同函数拟合后估计的结果。</p>
+<p><img src="/imgs/machine-learning/01-02.png" alt=""></p>
+<h2 id="定义:监督学习">定义:监督学习</h2><p>监督学习，意在给定一个算法，需要部分数据集已有正确答案。比如给定房价数据集，对于里面的每个数据，算法都知道对应的正确房价，即房子的实际卖出价格。算法的结果就是算出更多正确的价格，比如那个新房子，你朋友想卖的那个。</p>
+<h2 id="定义:回归问题">定义:回归问题</h2><p>回归问题属于监督学习，意在预测一个连续值的输出，比如价格，意味着要预测这类连续值属性的种类。</p>
+<h2 id="示例2:肿瘤问题">示例2:肿瘤问题</h2><p>预测胸部肿瘤是良性还是恶性，下面是一个已知数据集，横轴代表肿瘤大小，纵轴用1表示恶性，0表示良性。</p>
+<p><img src="/imgs/machine-learning/01-03.png" alt=""></p>
+<p>现在假设一个人得了肿瘤，其大小是图中的品红箭头位置，现在希望能估算出肿瘤是良性还是恶性的概率。</p>
+<h2 id="定义:分类问题">定义:分类问题</h2><p>分类问题被用于预测离散值的输出，比如肿瘤问题，其结果要么为良性，要么为恶性，这是一个离散的数据。数据集需要有一定的特征量，在肿瘤问题中有一个特征量肿瘤大小，在实际中特征量的个数并没有限制，对于无限多的特征量，需要后文的支持向量机的算法来解决。</p>
+<h1 id="无监督学习（Unsupervised_Learning）">无监督学习（Unsupervised Learning）</h1><h2 id="定义:无监督学习">定义:无监督学习</h2><p>对于监督学习的每个样本，我们都事先地告诉了每个样本所谓的正确答案（即样本数据集），在无监督学习中，我们没有属性或者标签这个概念，也就是说所有数据看起来都是一样的，如下图所示，左图为监督学习，右图为无监督学习。</p>
+<p><img src="/imgs/machine-learning/01-04.png" alt=""></p>
+<p>在无监督学习中，没人告诉我们数据如何使用，每个数据点究竟是什么意思，它只告诉我们现在有一个数据集，需要我们找出数据间的结构。对于一个数据集，无监督学习算法能判断该数据集包含的不同聚类，也就是所谓的聚类算法。</p>
+<h2 id="示例:实际运用场景">示例:实际运用场景</h2><ol>
+<li>在Google新闻中，自动地将不同媒体的关于同一事件的新闻报告的URL聚集到同一标题下。</li>
+</ol>
+<p><img src="/imgs/machine-learning/01-05.png" alt=""></p>
+<ol>
+<li>对于每个个体检测是否拥有某个特定的基因，使用聚类算法来进行基因分类</li>
+</ol>
+<p><img src="/imgs/machine-learning/01-06.png" alt=""></p>
+
       </div>
       <footer class="article-footer">
         <a data-url="http://codle.net/2016/03/31/machine-learning-introduction/" data-id="cimfnukys0002akineyvasz0f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
       </footer>
     </div>
   </article>
 	
 	<div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="machine-learning-introduction" data-title="machine-learning-introduction" data-url="http://codle.net/2016/03/31/machine-learning-introduction/"></div>
+	<div class="ds-thread" data-thread-key="machine-learning-introduction" data-title="机器学习日志：介绍" data-url="http://codle.net/2016/03/31/machine-learning-introduction/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -202,15 +241,16 @@
               
 <a href="/2016/03/31/machine-learning-introduction/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <span style="background-image:url(/imgs/machine-learning/01-01.png
+)" alt="机器学习日志：介绍" class="thumbnail-image"></span>
   
 </a>
 
             </div>
             
             <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2016/03/31/machine-learning-introduction/" class="title">machine-learning-introduction</a></p>
+              <p class="item-category"><a class="article-category-link" href="/categories/机器学习/">机器学习</a></p>
+              <p class="item-title"><a href="/2016/03/31/machine-learning-introduction/" class="title">机器学习日志：介绍</a></p>
               <p class="item-date"><time datetime="2016-03-31T02:11:15.000Z" itemprop="datePublished">2016-03-31</time></p>
             </div>
           </li>
@@ -304,7 +344,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/习题集/">习题集</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/习题集/">习题集</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -324,7 +364,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hiho/">hiho</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hiho/">hiho</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -334,7 +374,7 @@
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hiho/" style="font-size: 16.67px;">hiho</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hiho/" style="font-size: 16.67px;">hiho</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
     </div>
   </div>
 
