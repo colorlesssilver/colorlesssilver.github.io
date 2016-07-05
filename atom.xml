@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Silver's Codle]]></title>
-  <subtitle><![CDATA[就老去吧，孤独别醒来]]></subtitle>
+  <title><![CDATA[Codle]]></title>
+  <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-03-31T03:40:08.217Z</updated>
+  <updated>2016-07-05T08:55:21.332Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://codle.net/2016/03/31/machine-learning-introduction/"/>
     <id>http://codle.net/2016/03/31/machine-learning-introduction/</id>
     <published>2016-03-31T02:11:15.000Z</published>
-    <updated>2016-03-31T03:40:08.217Z</updated>
+    <updated>2016-07-05T08:55:21.332Z</updated>
     <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>最近开始学习C站上的NG的机器学习课程，会把视频中的内容写成笔记方便查阅，待学完后会将全部的笔记整理成PDF。</p>
 <h1 id="监督学习（Supervised_Learning）">监督学习（Supervised Learning）</h1><h2 id="示例1:预测房价">示例1:预测房价</h2><p>为了预测房价，某同学收集了某地区的房价数据集（如图），假设你朋友有栋750尺的房子，想知道房子在什么价格好卖掉。</p>
 <p><img src="/imgs/machine-learning/01-01.png" alt=""></p>
@@ -55,7 +55,7 @@
     <link href="http://codle.net/2016/03/13/hiho-practice-match2-a/"/>
     <id>http://codle.net/2016/03/13/hiho-practice-match2-a/</id>
     <published>2016-03-13T10:41:44.000Z</published>
-    <updated>2016-03-13T10:57:10.230Z</updated>
+    <updated>2016-07-05T08:09:12.405Z</updated>
     <content type="html"><![CDATA[<h1 id="hihoCoder编程练习赛：A_买零食">hihoCoder编程练习赛：A 买零食</h1><p><img src="/imgs/hihocoder.png" alt=""></p>
 <h2 id="描述">描述</h2><p>小Ho很喜欢在课间去小卖部买零食。然而不幸的是，这个学期他又有在一教的课，而一教的小卖部姐姐以冷若冰霜著称。第一次去一教小卖部买零食的时候，小Ho由于不懂事买了好一大堆东西，被小卖部姐姐给了一个“冷若冰霜”的眼神，食欲都下降了很多。</p>
 <p>从那以后，小Ho就学乖了，去小卖部买东西只敢同时买3包以内的零食，并且价格加起来必须是5的整数倍，方便小卖部姐姐算价格。</p>
@@ -90,7 +90,7 @@
     <link href="http://codle.net/2015/12/28/hiho78/"/>
     <id>http://codle.net/2015/12/28/hiho78/</id>
     <published>2015-12-28T13:23:13.000Z</published>
-    <updated>2015-12-31T12:46:20.984Z</updated>
+    <updated>2016-07-05T08:53:50.135Z</updated>
     <content type="html"><![CDATA[<h1 id="hihoCoder第七十八周：Shortest_Proper_Prefix">hihoCoder第七十八周：Shortest Proper Prefix</h1><h2 id="题目">题目</h2><p>Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequency queries which have s as a prefix are suggested. We say string s1 has string s2 as a prefix if and only if the first |s2| characters of s1 are the same as s2 where |s2| is the length of s2.</p>
 <p><img src="http://media.hihocoder.com//problem_images/20150117/14214822852319.png" alt=""></p>
 <p>These days Little Hi has been working on a way to improve the QAC performance. He collected N high-frequency queries. We say a string s is a proper prefix if there are no more than 5 collected queries have s as a prefix. A string s is a shortest proper prefix if s is a proper prefix and all the prefixes of s(except for s itself) are not proper prefixes. Little Hi wants to know the number of shortest proper prefixes given N collected queries.</p>
@@ -129,7 +129,7 @@
     <link href="http://codle.net/2015/11/16/hiho72/"/>
     <id>http://codle.net/2015/11/16/hiho72/</id>
     <published>2015-11-16T12:44:23.000Z</published>
-    <updated>2015-12-31T12:46:29.245Z</updated>
+    <updated>2016-07-05T08:53:43.515Z</updated>
     <content type="html"><![CDATA[<h1 id="hihoCoder第七十二周：Disk_Storage">hihoCoder第七十二周：Disk Storage</h1><h2 id="题目">题目</h2><p><img src="http://media.hihocoder.com//problem_images/20150103/14202824928356.png" alt=""></p>
 <p>Little Hi and Little Ho have a disk storage. The storage’s shape is a truncated cone of height H. R+H is radius of top circle and R is radius of base circle.<br>Little Ho buys N disks today. Every disk is a cylinder of height 1. Little Ho wants to put these disk into the storage under below constraints:</p>
 <ol>
@@ -221,7 +221,7 @@
     <link href="http://codle.net/2015/11/03/ispalindrome/"/>
     <id>http://codle.net/2015/11/03/ispalindrome/</id>
     <published>2015-11-03T09:57:40.000Z</published>
-    <updated>2015-11-12T07:22:26.808Z</updated>
+    <updated>2016-07-05T08:55:32.651Z</updated>
     <content type="html"><![CDATA[<h1 id="算法学习：回文串">算法学习：回文串</h1><h2 id="前言">前言</h2><p>所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。</p>
 <h2 id="判断回文">判断回文</h2><h3 id="题目描述">题目描述</h3><p>给定一个字符串，如何判断这个字符串是否是回文串。<br><img src="/imgs/algorithm.jpg" alt=""><br><a id="more"></a></p>
 <h3 id="分析与解法：">分析与解法：</h3><h4 id="解法一：两头向中间扫">解法一：两头向中间扫</h4><p>找到这个字符串的开头和结尾，然后从两端开始向中间扫描，扫描过程中，如果对应的字符都相同，那么说明这个字符串回文。当前端超过或者等于后端时候结束扫描。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!s.size())</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> back = s.size() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> front = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (front &lt; back) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[front]!=s[back])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		front++;</span><br><span class="line">		back--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -232,7 +232,8 @@
 <h3 id="分析与算法">分析与算法</h3><p>由于是单链表，单向传递无法使用两个指针来扫描。可以扫描一次找到中点，然后再来进行一次扫描，从开头和中点来开始扫描进行比较，但是这样扫描了两次会增加时间复杂度。我们这里考虑使用快慢指针的方法，用两个指针来开始扫描，一个指针每次递增一步，一个每次递增两步。当快的指针到达链表尾部是，慢的指针就到达了链表的中点。然后我们倒置后半段链表与开头进行比较判断是否是回文串。<br>参考代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(Node* t)</span> </span>&#123;</span><br><span class="line">	Node* slow = t;</span><br><span class="line">	Node* flast = t;</span><br><span class="line">	Node* l = <span class="keyword">new</span> Node;</span><br><span class="line">	Node* p;</span><br><span class="line">	Node* tl;</span><br><span class="line">	<span class="keyword">while</span> (flast-&gt;next) &#123;</span><br><span class="line">		slow = slow-&gt;next;</span><br><span class="line">		flast = flast-&gt;next;</span><br><span class="line">		<span class="keyword">if</span> (flast-&gt;next)</span><br><span class="line">			flast = flast-&gt;next;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	p = slow;</span><br><span class="line">	<span class="keyword">while</span> (p-&gt;next) &#123;</span><br><span class="line">		Node* temp = <span class="keyword">new</span> Node(p-&gt;next-&gt;val);</span><br><span class="line">		temp-&gt;next = l-&gt;next;</span><br><span class="line">		l-&gt;next = temp;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (p = t-&gt;next, tl = l-&gt;next; tl != <span class="literal">NULL</span>; p = p-&gt;next, tl = tl-&gt;next) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p-&gt;val != tl-&gt;val)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。]]>
+    <![CDATA[<h1 id="算法学习：回文串">算法学习：回文串</h1><h2 id="前言">前言</h2><p>所谓回文串，就是从开头顺序读或者从结尾向前面读都一样的字符串（或链表），如abcdcba，madam。回文串能够轻易考验对字符串的应用，因此关于回文串的题目也是非常的广泛。</p>
+<h2 id="判断回文">判断回文</h2><h3 id="题目描述">题目描述</h3><p>给定一个字符串，如何判断这个字符串是否是回文串。<br><img src="/imgs/algorithm.jpg" alt=""><br>]]>
     
     </summary>
     
@@ -249,13 +250,13 @@
     <link href="http://codle.net/2015/10/29/binary-tree/"/>
     <id>http://codle.net/2015/10/29/binary-tree/</id>
     <published>2015-10-29T12:48:30.000Z</published>
-    <updated>2015-11-12T07:27:20.202Z</updated>
+    <updated>2016-07-05T09:00:18.735Z</updated>
     <content type="html"><![CDATA[<h1 id="数据结构：二叉树（C++版）">数据结构：二叉树（C++版）</h1><h2 id="二叉树的定义">二叉树的定义</h2><p>二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。<br>其中：</p>
 <ul>
-<li>二叉树第i层至多有2^(i-1)个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有2^0=1个节点）；</li>
-<li>深度为k的二叉树至多有2^k-1个节点（即是说1-k层全满的情况，那么每层分别有2^0,2^1,2^2…2^(k-1)个节点，等比数列求和可得2^k-1）；</li>
+<li>二叉树第i层至多有$2^{i-1}$个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有$2^0$=1个节点）；</li>
+<li>深度为k的二叉树至多有$2^{k-1}$个节点（即是说k-1层全满的情况，那么每层分别有$2^0$,$2^1$,$2^2$…$2^{k-1}$个节点，等比数列求和可得$2^k-1$）；</li>
 </ul>
-<p>一棵深度为k，且有2^k-1个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
+<p>一棵深度为k，且有$2^{k-1}$个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
 <p><img src="/imgs/useful.png" alt=""><br><a id="more"></a></p>
 <h2 id="二叉树的储存">二叉树的储存</h2><h3 id="链式存储">链式存储</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct <span class="keyword">Node</span><span class="identifier"> </span><span class="title">&#123;  </span><br><span class="line">	ElemType</span> val;	//本结点储存值  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* left</span>;     //结点指针用于储存左子树  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* right</span>;	//结点指针用于储存右子树  </span><br><span class="line">        //构造函数，方便调用关键字new来构造节点  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">(ElemType</span> v=<span class="number">0</span>) &#123;  </span><br><span class="line">		val = v;  </span><br><span class="line">		left = right = NULL;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>链式存储也是最常见的二叉树存储方式</p>
@@ -275,7 +276,13 @@
 <h4 id="后序和中序序列建树">后序和中序序列建树</h4><p>后序和中序序列建树的方法大致思路相同，只是在寻找根节点的方法不同，因为后序遍历的顺序是左–&gt;右–&gt;根，所以后序遍历的最后一个元素是根节点，和前序遍历的首元素不同。其他思路可以参考上文，下面是代码的实现:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildTree2</span><span class="params">(<span class="built_in">string</span> inOrder, <span class="built_in">string</span> postOrder, Node* &amp;t)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> inL, inR, postL, postR;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inOrder.size(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (inOrder[i] == postOrder[postOrder.size() - <span class="number">1</span>]) &#123;</span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag == <span class="literal">false</span>) &#123;</span><br><span class="line">			inL.push_back(inOrder[i]);</span><br><span class="line">			postL.push_back(postOrder[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			inR.push_back(inOrder[i]);</span><br><span class="line">			postR.push_back(postOrder[i - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	t-&gt;val = postOrder[postOrder.size() - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (inL.size()) &#123;</span><br><span class="line">		t-&gt;left = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree2(inL, postL, t-&gt;left);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (inR.size()) &#123;</span><br><span class="line">		t-&gt;right = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree2(inR, postR, t-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[树是一种非常重要的数据结构，树形结构在计算机科学中应用的非常广泛，二叉树是一种特殊的树形结构。本文将讲解数据结构中二叉树的实现及一些在实际应用中的算法实现。]]>
+    <![CDATA[<h1 id="数据结构：二叉树（C++版）">数据结构：二叉树（C++版）</h1><h2 id="二叉树的定义">二叉树的定义</h2><p>二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。<br>其中：</p>
+<ul>
+<li>二叉树第i层至多有$2^{i-1}$个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有$2^0$=1个节点）；</li>
+<li>深度为k的二叉树至多有$2^{k-1}$个节点（即是说k-1层全满的情况，那么每层分别有$2^0$,$2^1$,$2^2$…$2^{k-1}$个节点，等比数列求和可得$2^k-1$）；</li>
+</ul>
+<p>一棵深度为k，且有$2^{k-1}$个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
+<p><img src="/imgs/useful.png" alt=""><br>]]>
     
     </summary>
     
@@ -292,7 +299,7 @@
     <link href="http://codle.net/2015/10/29/how-to-build-hexo/"/>
     <id>http://codle.net/2015/10/29/how-to-build-hexo/</id>
     <published>2015-10-29T07:08:54.000Z</published>
-    <updated>2015-11-12T07:18:35.678Z</updated>
+    <updated>2016-07-05T08:56:14.589Z</updated>
     <content type="html"><![CDATA[<h1 id="使用hexo搭建个人博客">使用hexo搭建个人博客</h1><h2 id="前言">前言</h2><p>折腾了两天终于做好了这个博客站，相比于wordpress+虚拟空间的组合，使用Github Page+hexo无疑显得要更加轻便与稳定。<br>下面就来谈一谈是如何在Github上搭建一个hexo博客的。</p>
 <p><img src="/imgs/post1.jpg" alt="&quot;Hexo&quot;"></p>
 <a id="more"></a>
@@ -362,7 +369,8 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[折腾了两天终于做好了这个博客站，相比于wordpress+虚拟空间的组合，使用Github Page+hexo无疑显得要更加轻便与稳定。下面就来谈一谈是如何在Github上搭建一个hexo博客的。]]>
+    <![CDATA[<h1 id="使用hexo搭建个人博客">使用hexo搭建个人博客</h1><h2 id="前言">前言</h2><p>折腾了两天终于做好了这个博客站，相比于wordpress+虚拟空间的组合，使用Github Page+hexo无疑显得要更加轻便与稳定。<br>下面就来谈一谈是如何在Github上搭建一个hexo博客的。</p>
+<p><img src="/imgs/post1.jpg" alt="&quot;Hexo&quot;"></p>]]>
     
     </summary>
     

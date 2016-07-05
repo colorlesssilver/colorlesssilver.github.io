@@ -1,132 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  
-  <title>数据结构：二叉树（C++版） | Silver&#39;s Codle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="树是一种非常重要的数据结构，树形结构在计算机科学中应用的非常广泛，二叉树是一种特殊的树形结构。本文将讲解数据结构中二叉树的实现及一些在实际应用中的算法实现。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构：二叉树（C++版）">
-<meta property="og:url" content="http://codle.net/2015/10/29/binary-tree/index.html">
-<meta property="og:site_name" content="Silver's Codle">
-<meta property="og:description" content="树是一种非常重要的数据结构，树形结构在计算机科学中应用的非常广泛，二叉树是一种特殊的树形结构。本文将讲解数据结构中二叉树的实现及一些在实际应用中的算法实现。">
-<meta property="og:image" content="http://codle.net/imgs/useful.png">
-<meta property="og:updated_time" content="2015-11-12T07:27:20.202Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构：二叉树（C++版）">
-<meta name="twitter:description" content="树是一种非常重要的数据结构，树形结构在计算机科学中应用的非常广泛，二叉树是一种特殊的树形结构。本文将讲解数据结构中二叉树的实现及一些在实际应用中的算法实现。">
-  
-  
-    <link rel="icon" href="/imgs/favicon.png">
-  
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  
-  
-    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
-  
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  
+    <!--Description-->
     
-      <style type="text/css">
-          .logo { background-image:url(/imgs/test5.png);
-          
-          
-          
-          }
+        <meta name="description" content="数据结构：二叉树（C++版）二叉树的定义二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。其中：
 
-        
-      </style>
+二叉树第i层至多有$2^{i-1}$个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有$2^0$=1个节点）；
+深度为k的二叉树至多有$2^{k-1}$个节点（即是说k-1层全满的情况，那么每层分别有$2^0$,$2^1$,$2^2$…$2^{k-1}$个节点，等比数列求和可得$2^k-1$）；
+
+一棵深度为k，且有$2^{k-1}$个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。">
     
-  
 
-  
-    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
-    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!--Author-->
+    
+        <meta name="author" content="Silver">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="数据结构：二叉树（C++版）"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codle"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>数据结构：二叉树（C++版） - Codle</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
 </head>
 
+
 <body>
-  <div id="wrap">
-    <header id="header">
-  <div id="header-outer" class="outer">
-    <div class="container">
-      <div class="container-inner">
-        <div id="header-title">
-          <h1 class="logo-wrap">
-            <a href="/" class="logo"></a>
-          </h1>
-          
-            <h2 class="subtitle-wrap">
-              <p class="subtitle">就老去吧，孤独别醒来</p>
-            </h2>
-          
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable</a>
         </div>
-        <div id="header-inner" class="nav-container">
-          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-          <div class="nav-container-inner">
-            <ul id="main-nav">
-              
-                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">主页</a></li>
-              
-                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/习题集/">习题集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/博客相关/">博客相关</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/数据结构/">数据结构</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/机器学习/">机器学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/算法学习/">算法学习</a></li></ul>
-                  
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-weibo fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
             </ul>
-            <nav id="sub-nav">
-              <div id="search-form-wrap">
-                
-                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://codle.net"></form>
-                
-              </div>
-            </nav>
-          </div>
         </div>
-      </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </div>
-</header>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/bg.png')">
     <div class="container">
-      <div class="main-body container-inner">
-        <div class="main-body-inner">
-          <section id="main">
-            <div class="main-body-header">
-
-              <h1 class="header"><a class="page-title-link" href="/categories/数据结构/">数据结构</a></h1>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>数据结构：二叉树（C++版）</h1>
+                    
+                    <h2 class="post-subheading">
+                        数据结构中二叉树的实现及相关的算法
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2015-10-29
+                    </span>
+                </div>
             </div>
-            <div class="main-body-content">
-              
-  <article id="post-binary-tree" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-      <!--  -->
-      
-        <header class="article-header">
-          
-  
-    <h1 class="article-title" itemprop="name">
-      数据结构：二叉树（C++版）
-    </h1>
-  
+        </div>
+    </div>
+</header>
 
-        </header>
-      
-      <p class="article-byline">
-        <a href="/2015/10/29/binary-tree/" class="article-date">
-  <time datetime="2015-10-29T12:48:30.000Z" itemprop="datePublished">2015-10-29</time>
-</a>
-      </p>
-      <div class="article-entry" itemprop="articleBody">
-        <h1 id="数据结构：二叉树（C++版）">数据结构：二叉树（C++版）</h1><h2 id="二叉树的定义">二叉树的定义</h2><p>二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。<br>其中：</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/C/">#C++</a> <a href="/tags/数据结构/">#数据结构</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/数据结构/">数据结构</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="数据结构：二叉树（C++版）">数据结构：二叉树（C++版）</h1><h2 id="二叉树的定义">二叉树的定义</h2><p>二叉树是每个节点最多有两个子树的树形结构，二叉树的子树有左右之分，其次序不能颠倒。<br>其中：</p>
 <ul>
-<li>二叉树第i层至多有2^(i-1)个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有2^0=1个节点）；</li>
-<li>深度为k的二叉树至多有2^k-1个节点（即是说1-k层全满的情况，那么每层分别有2^0,2^1,2^2…2^(k-1)个节点，等比数列求和可得2^k-1）；</li>
+<li>二叉树第i层至多有$2^{i-1}$个节点（节点最多，则说明前面层都是满的，则每层都是上一层的两倍，第一层有$2^0$=1个节点）；</li>
+<li>深度为k的二叉树至多有$2^{k-1}$个节点（即是说k-1层全满的情况，那么每层分别有$2^0$,$2^1$,$2^2$…$2^{k-1}$个节点，等比数列求和可得$2^k-1$）；</li>
 </ul>
-<p>一棵深度为k，且有2^k-1个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
+<p>一棵深度为k，且有$2^{k-1}$个节点称之为满二叉树；深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
 <p><img src="/imgs/useful.png" alt=""><br><a id="more"></a></p>
 <h2 id="二叉树的储存">二叉树的储存</h2><h3 id="链式存储">链式存储</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct <span class="keyword">Node</span><span class="identifier"> </span><span class="title">&#123;  </span><br><span class="line">	ElemType</span> val;	//本结点储存值  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* left</span>;     //结点指针用于储存左子树  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">* right</span>;	//结点指针用于储存右子树  </span><br><span class="line">        //构造函数，方便调用关键字new来构造节点  </span><br><span class="line">	<span class="keyword">Node</span><span class="identifier"></span><span class="title">(ElemType</span> v=<span class="number">0</span>) &#123;  </span><br><span class="line">		val = v;  </span><br><span class="line">		left = right = NULL;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>链式存储也是最常见的二叉树存储方式</p>
@@ -145,294 +219,125 @@
 <h4 id="前序和中序序列建树">前序和中序序列建树</h4><p>在前序遍历中，遍历二叉树的顺序是根–&gt;左–&gt;右的顺序，而在中序遍历中，遍历顺序是左–&gt;根–&gt;右的顺序。在两者生成的遍历序列中，我们可以很快发现，前序遍历的第一个元素就是该二叉树的根节点，然后再去中序遍历中找到这个元素，因为中序是左–&gt;根–&gt;右的遍历顺序，那么在根节点左侧的字符串就是该根节点的左子树，右侧的字符串就是该节点的右子树。那么对子树，我们有可以从前序遍历中找到相应根节点然后重复做上述步骤，这样就完成了一棵二叉树的建立。由于步骤是一个重复的过程，我们可以使用递归的方式来进行：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildTree</span><span class="params">(<span class="built_in">string</span> inOrder, <span class="built_in">string</span> preOrder, Node* &amp;t)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> inL, inR, preL, preR;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>;                      <span class="comment">//标志变量用于判断是否找到根节点</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inOrder.size(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (inOrder[i] == preOrder[<span class="number">0</span>]) &#123;    <span class="comment">//查找根节点</span></span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag == <span class="literal">false</span>) &#123;              	<span class="comment">//在没找到根节点时，把遍历的字符串放入左子树串</span></span><br><span class="line">			inL.push_back(inOrder[i]);</span><br><span class="line">			preL.push_back(preOrder[i + <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;                              	<span class="comment">//找到了后就放入右子树串</span></span><br><span class="line">			inR.push_back(inOrder[i]);</span><br><span class="line">			preR.push_back(preOrder[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	t-&gt;val = preOrder[<span class="number">0</span>];                   <span class="comment">//把当前根值赋给根节点</span></span><br><span class="line">	<span class="keyword">if</span> (inL.size()) &#123;                       <span class="comment">//如果左子树串不为空，那么递归调用，对左子树进行构树</span></span><br><span class="line">		t-&gt;left = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree(inL, preL, t-&gt;left);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (inR.size()) &#123;                       <span class="comment">//如果右子树串不空，就对右子树构树。</span></span><br><span class="line">		t-&gt;right = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree(inR, preR, t-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="后序和中序序列建树">后序和中序序列建树</h4><p>后序和中序序列建树的方法大致思路相同，只是在寻找根节点的方法不同，因为后序遍历的顺序是左–&gt;右–&gt;根，所以后序遍历的最后一个元素是根节点，和前序遍历的首元素不同。其他思路可以参考上文，下面是代码的实现:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildTree2</span><span class="params">(<span class="built_in">string</span> inOrder, <span class="built_in">string</span> postOrder, Node* &amp;t)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> inL, inR, postL, postR;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inOrder.size(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (inOrder[i] == postOrder[postOrder.size() - <span class="number">1</span>]) &#123;</span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag == <span class="literal">false</span>) &#123;</span><br><span class="line">			inL.push_back(inOrder[i]);</span><br><span class="line">			postL.push_back(postOrder[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			inR.push_back(inOrder[i]);</span><br><span class="line">			postR.push_back(postOrder[i - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	t-&gt;val = postOrder[postOrder.size() - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (inL.size()) &#123;</span><br><span class="line">		t-&gt;left = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree2(inL, postL, t-&gt;left);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (inR.size()) &#123;</span><br><span class="line">		t-&gt;right = <span class="keyword">new</span> Node;</span><br><span class="line">		buildTree2(inR, postR, t-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-      </div>
-      <footer class="article-footer">
-        <a data-url="http://codle.net/2015/10/29/binary-tree/" data-id="cimfnul0o000yakinrzmi6mrp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-        
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
 
-      </footer>
-    </div>
-  </article>
-	
-	<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="binary-tree" data-title="数据结构：二叉树（C++版）" data-url="http://codle.net/2015/10/29/binary-tree/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"codle"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-	
-  
-  
-
-
+                
             </div>
-          </section>
-          <aside id="sidebar">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-  <div class="sidebar-top">
-    <p>关注我 :</p>
-    <ul class="social-links">
-      
-        <li><a class="social-tooltip" title="weibo" href="http://weibo.com/323327275" target="_blank"><i class="icon fa fa-weibo"></i></a></li>
-      
-        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/Silver9512" target="_blank"><i class="icon fa fa-twitter"></i></a></li>
-      
-        <li><a class="social-tooltip" title="facebook" href="https://facebook.com/try.silver.3" target="_blank"><i class="icon fa fa-facebook"></i></a></li>
-      
-        <li><a class="social-tooltip" title="github" href="https://github.com/colorlesssilver" target="_blank"><i class="icon fa fa-github"></i></a></li>
-      
-        <li><a class="social-tooltip" title="rss" href="/atom.xml" target="_blank"><i class="icon fa fa-rss"></i></a></li>
-      
-    </ul>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/11/03/ispalindrome/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <p class="article-nav-title">
-        
-          算法学习：回文串
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-  
-  
-    <a href="/2015/10/29/how-to-build-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">使用hexo搭建个人博客</p>
-      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-    </a>
-  
-</nav>
 
-  
-  <div class="widgets-container">
-    
-      
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul id="recent-post" class="">
-        
-          <li>
+            <!-- Comments -->
             
-            <div class="item-thumbnail">
-              
-<a href="/2016/03/31/machine-learning-introduction/" class="thumbnail">
-  
-    <span style="background-image:url(/imgs/machine-learning/01-01.png
-)" alt="机器学习日志：介绍" class="thumbnail-image"></span>
-  
-</a>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
 
-            </div>
+
+                </div>
             
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/机器学习/">机器学习</a></p>
-              <p class="item-title"><a href="/2016/03/31/machine-learning-introduction/" class="title">机器学习日志：介绍</a></p>
-              <p class="item-date"><time datetime="2016-03-31T02:11:15.000Z" itemprop="datePublished">2016-03-31</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2016/03/13/hiho-practice-match2-a/" class="thumbnail">
-  
-    <span style="background-image:url(/imgs/hihocoder.png
-)" alt="hihoCoder编程练习赛：A 买零食" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2016/03/13/hiho-practice-match2-a/" class="title">hihoCoder编程练习赛：A 买零食</a></p>
-              <p class="item-date"><time datetime="2016-03-13T10:41:44.000Z" itemprop="datePublished">2016-03-13</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/12/28/hiho78/" class="thumbnail">
-  
-    <span style="background-image:url(http://media.hihocoder.com//problem_images/20150117/14214822852319.png
-)" alt="hihoCoder第七十八周：Shortest Proper Prefix" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2015/12/28/hiho78/" class="title">hihoCoder第七十八周：Shortest Proper Prefix</a></p>
-              <p class="item-date"><time datetime="2015-12-28T13:23:13.000Z" itemprop="datePublished">2015-12-28</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/11/16/hiho72/" class="thumbnail">
-  
-    <span style="background-image:url(http://media.hihocoder.com//problem_images/20150103/14202824928356.png
-)" alt="hihoCoder第七十二周：Disk Storage" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2015/11/16/hiho72/" class="title">hihoCoder第七十二周：Disk Storage</a></p>
-              <p class="item-date"><time datetime="2015-11-16T12:44:23.000Z" itemprop="datePublished">2015-11-16</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/11/16/dp-pdf/" class="thumbnail">
-  
-    <span style="background-image:url(http://poj.org/images/2663_1.jpg
-)" alt="算法学习：动态规划" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/算法学习/">算法学习</a></p>
-              <p class="item-title"><a href="/2015/11/16/dp-pdf/" class="title">算法学习：动态规划</a></p>
-              <p class="item-date"><time datetime="2015-11-16T07:10:32.000Z" itemprop="datePublished">2015-11-16</time></p>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/习题集/">习题集</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hiho/">hiho</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-float">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hiho/" style="font-size: 16.67px;">hiho</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">链接</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="http://hexo.io">Hexo</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-    
-  </div>
-</aside>
         </div>
-      </div>
     </div>
-    <footer id="footer">
-  
-  <div class="container">
-    <div class="container-inner">
-      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-      <div class="credit">
-        <h1 class="logo-wrap">
-          <a href="/" class="logo"></a>
-        </h1>
-        <p>&copy; 2016 Silver</p>
-        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-      </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://weibo.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+					
+					
+                        <li>
+                            <a href="www.zhihu.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
+
+
+    <!-- After footer scripts -->
     
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-
-
-  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
-  <script src="/scrollLoading/main.js" type="text/javascript"></script>
-
+<!-- Disqus Comments -->
 
 
 
-<script src="/js/html-patch.js" type="text/javascript"></script>
-<script src="/js/script.js" type="text/javascript"></script>
+<!-- mathjax config similar to math.stackexchange -->
 
-  </div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
+
 </html>

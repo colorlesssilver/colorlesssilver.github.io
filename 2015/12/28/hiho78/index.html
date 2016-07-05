@@ -1,128 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  
-  <title>hihoCoder第七十八周：Shortest Proper Prefix | Silver&#39;s Codle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hihoCoder第七十八周：Shortest Proper Prefix题目Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequenc">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hihoCoder第七十八周：Shortest Proper Prefix">
-<meta property="og:url" content="http://codle.net/2015/12/28/hiho78/index.html">
-<meta property="og:site_name" content="Silver's Codle">
-<meta property="og:description" content="hihoCoder第七十八周：Shortest Proper Prefix题目Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequenc">
-<meta property="og:image" content="http://media.hihocoder.com//problem_images/20150117/14214822852319.png">
-<meta property="og:image" content="http://media.hihocoder.com/contests/hiho78/hiho78.png">
-<meta property="og:updated_time" content="2015-12-31T12:46:20.984Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hihoCoder第七十八周：Shortest Proper Prefix">
-<meta name="twitter:description" content="hihoCoder第七十八周：Shortest Proper Prefix题目Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequenc">
-  
-  
-    <link rel="icon" href="/imgs/favicon.png">
-  
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  
-  
-    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
-  
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  
+    <!--Description-->
     
-      <style type="text/css">
-          .logo { background-image:url(/imgs/test5.png);
-          
-          
-          
-          }
-
-        
-      </style>
+        <meta name="description" content="hihoCoder第七十八周：Shortest Proper Prefix题目Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type som">
     
-  
 
-  
-    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
-    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!--Author-->
+    
+        <meta name="author" content="Silver">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="hihoCoder第七十八周：Shortest Proper Prefix"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codle"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>hihoCoder第七十八周：Shortest Proper Prefix - Codle</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
 </head>
 
+
 <body>
-  <div id="wrap">
-    <header id="header">
-  <div id="header-outer" class="outer">
-    <div class="container">
-      <div class="container-inner">
-        <div id="header-title">
-          <h1 class="logo-wrap">
-            <a href="/" class="logo"></a>
-          </h1>
-          
-            <h2 class="subtitle-wrap">
-              <p class="subtitle">就老去吧，孤独别醒来</p>
-            </h2>
-          
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable</a>
         </div>
-        <div id="header-inner" class="nav-container">
-          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-          <div class="nav-container-inner">
-            <ul id="main-nav">
-              
-                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">主页</a></li>
-              
-                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/习题集/">习题集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/博客相关/">博客相关</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/数据结构/">数据结构</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/机器学习/">机器学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/算法学习/">算法学习</a></li></ul>
-                  
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-weibo fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
             </ul>
-            <nav id="sub-nav">
-              <div id="search-form-wrap">
-                
-                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://codle.net"></form>
-                
-              </div>
-            </nav>
-          </div>
         </div>
-      </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </div>
-</header>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/bg.png')">
     <div class="container">
-      <div class="main-body container-inner">
-        <div class="main-body-inner">
-          <section id="main">
-            <div class="main-body-header">
-
-              <h1 class="header"><a class="page-title-link" href="/categories/习题集/">习题集</a></h1>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>hihoCoder第七十八周：Shortest Proper Prefix</h1>
+                    
+                    <h2 class="post-subheading">
+                        使用Tire树来进行存储字符串
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2015-12-28
+                    </span>
+                </div>
             </div>
-            <div class="main-body-content">
-              
-  <article id="post-hiho78" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-      <!--  -->
-      
-        <header class="article-header">
-          
-  
-    <h1 class="article-title" itemprop="name">
-      hihoCoder第七十八周：Shortest Proper Prefix
-    </h1>
-  
+        </div>
+    </div>
+</header>
 
-        </header>
-      
-      <p class="article-byline">
-        <a href="/2015/12/28/hiho78/" class="article-date">
-  <time datetime="2015-12-28T13:23:13.000Z" itemprop="datePublished">2015-12-28</time>
-</a>
-      </p>
-      <div class="article-entry" itemprop="articleBody">
-        <h1 id="hihoCoder第七十八周：Shortest_Proper_Prefix">hihoCoder第七十八周：Shortest Proper Prefix</h1><h2 id="题目">题目</h2><p>Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequency queries which have s as a prefix are suggested. We say string s1 has string s2 as a prefix if and only if the first |s2| characters of s1 are the same as s2 where |s2| is the length of s2.</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/hiho/">#hiho</a> <a href="/tags/算法/">#算法</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/习题集/">习题集</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="hihoCoder第七十八周：Shortest_Proper_Prefix">hihoCoder第七十八周：Shortest Proper Prefix</h1><h2 id="题目">题目</h2><p>Query auto-completion(QAC) is widely used in many search applications. The basic idea is that when you type some string s in the search box several high-frequency queries which have s as a prefix are suggested. We say string s1 has string s2 as a prefix if and only if the first |s2| characters of s1 are the same as s2 where |s2| is the length of s2.</p>
 <p><img src="http://media.hihocoder.com//problem_images/20150117/14214822852319.png" alt=""></p>
 <p>These days Little Hi has been working on a way to improve the QAC performance. He collected N high-frequency queries. We say a string s is a proper prefix if there are no more than 5 collected queries have s as a prefix. A string s is a shortest proper prefix if s is a proper prefix and all the prefixes of s(except for s itself) are not proper prefixes. Little Hi wants to know the number of shortest proper prefixes given N collected queries.</p>
 <p>Hint: the 4 shortest proper prefixes for Sample Input are “ab”, “bb”, “bc” and “be”. Empty string “” is not counted as a proper prefix even if N &lt;= 5.</p>
@@ -143,294 +211,95 @@
 <p>这样我们只用对树进行深度优先搜索，找到结点的值小于五就返回，用一个全局变量储存返回的次数即所求的前缀个数。</p>
 <h2 id="AC代码">AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> TireNode &#123;</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;TireNode*&gt; child;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="built_in">string</span> str, TireNode* &amp;head)</span> </span>&#123;</span><br><span class="line">	TireNode* p = head;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">char</span> ch : str) &#123;</span><br><span class="line">		<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">auto</span> it = p-&gt;child.begin();</span><br><span class="line">		<span class="keyword">for</span> (; it != p-&gt;child.end(); ++it) &#123;</span><br><span class="line">			<span class="keyword">if</span> ((*it)-&gt;ch == ch) &#123;</span><br><span class="line">				(*it)-&gt;cnt++;</span><br><span class="line">				p = (*it);</span><br><span class="line">				flag = <span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">			TireNode* tmp = <span class="keyword">new</span> TireNode;</span><br><span class="line">			tmp-&gt;ch = ch;</span><br><span class="line">			tmp-&gt;cnt++;</span><br><span class="line">			p-&gt;child.push_back(tmp);</span><br><span class="line">			p = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TireNode* t)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (t-&gt;cnt &gt; <span class="number">5</span>) &#123;</span><br><span class="line">		<span class="keyword">auto</span> it = t-&gt;child.begin();</span><br><span class="line">		<span class="keyword">for</span> (; it != t-&gt;child.end(); ++it)</span><br><span class="line">			dfs(*it);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt++;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">string</span> tmp;</span><br><span class="line">	TireNode* t = <span class="keyword">new</span> TireNode;</span><br><span class="line">	t-&gt;cnt = <span class="number">6</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span> (n--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">		insert(tmp, t);</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(t);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      </div>
-      <footer class="article-footer">
-        <a data-url="http://codle.net/2015/12/28/hiho78/" data-id="cimfnul00000hakink1b43scg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-        
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hiho/">hiho</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
-      </footer>
-    </div>
-  </article>
-	
-	<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hiho78" data-title="hihoCoder第七十八周：Shortest Proper Prefix" data-url="http://codle.net/2015/12/28/hiho78/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"codle"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-	
-  
-  
-
-
+                
             </div>
-          </section>
-          <aside id="sidebar">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-  <div class="sidebar-top">
-    <p>关注我 :</p>
-    <ul class="social-links">
-      
-        <li><a class="social-tooltip" title="weibo" href="http://weibo.com/323327275" target="_blank"><i class="icon fa fa-weibo"></i></a></li>
-      
-        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/Silver9512" target="_blank"><i class="icon fa fa-twitter"></i></a></li>
-      
-        <li><a class="social-tooltip" title="facebook" href="https://facebook.com/try.silver.3" target="_blank"><i class="icon fa fa-facebook"></i></a></li>
-      
-        <li><a class="social-tooltip" title="github" href="https://github.com/colorlesssilver" target="_blank"><i class="icon fa fa-github"></i></a></li>
-      
-        <li><a class="social-tooltip" title="rss" href="/atom.xml" target="_blank"><i class="icon fa fa-rss"></i></a></li>
-      
-    </ul>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/13/hiho-practice-match2-a/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <p class="article-nav-title">
-        
-          hihoCoder编程练习赛：A 买零食
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-  
-  
-    <a href="/2015/11/16/hiho72/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">hihoCoder第七十二周：Disk Storage</p>
-      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-    </a>
-  
-</nav>
 
-  
-  <div class="widgets-container">
-    
-      
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul id="recent-post" class="">
-        
-          <li>
+            <!-- Comments -->
             
-            <div class="item-thumbnail">
-              
-<a href="/2016/03/31/machine-learning-introduction/" class="thumbnail">
-  
-    <span style="background-image:url(/imgs/machine-learning/01-01.png
-)" alt="机器学习日志：介绍" class="thumbnail-image"></span>
-  
-</a>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
 
-            </div>
+
+                </div>
             
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/机器学习/">机器学习</a></p>
-              <p class="item-title"><a href="/2016/03/31/machine-learning-introduction/" class="title">机器学习日志：介绍</a></p>
-              <p class="item-date"><time datetime="2016-03-31T02:11:15.000Z" itemprop="datePublished">2016-03-31</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2016/03/13/hiho-practice-match2-a/" class="thumbnail">
-  
-    <span style="background-image:url(/imgs/hihocoder.png
-)" alt="hihoCoder编程练习赛：A 买零食" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2016/03/13/hiho-practice-match2-a/" class="title">hihoCoder编程练习赛：A 买零食</a></p>
-              <p class="item-date"><time datetime="2016-03-13T10:41:44.000Z" itemprop="datePublished">2016-03-13</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/12/28/hiho78/" class="thumbnail">
-  
-    <span style="background-image:url(http://media.hihocoder.com//problem_images/20150117/14214822852319.png
-)" alt="hihoCoder第七十八周：Shortest Proper Prefix" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2015/12/28/hiho78/" class="title">hihoCoder第七十八周：Shortest Proper Prefix</a></p>
-              <p class="item-date"><time datetime="2015-12-28T13:23:13.000Z" itemprop="datePublished">2015-12-28</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/11/16/hiho72/" class="thumbnail">
-  
-    <span style="background-image:url(http://media.hihocoder.com//problem_images/20150103/14202824928356.png
-)" alt="hihoCoder第七十二周：Disk Storage" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/习题集/">习题集</a></p>
-              <p class="item-title"><a href="/2015/11/16/hiho72/" class="title">hihoCoder第七十二周：Disk Storage</a></p>
-              <p class="item-date"><time datetime="2015-11-16T12:44:23.000Z" itemprop="datePublished">2015-11-16</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/11/16/dp-pdf/" class="thumbnail">
-  
-    <span style="background-image:url(http://poj.org/images/2663_1.jpg
-)" alt="算法学习：动态规划" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/算法学习/">算法学习</a></p>
-              <p class="item-title"><a href="/2015/11/16/dp-pdf/" class="title">算法学习：动态规划</a></p>
-              <p class="item-date"><time datetime="2015-11-16T07:10:32.000Z" itemprop="datePublished">2015-11-16</time></p>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/习题集/">习题集</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客相关/">博客相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hiho/">hiho</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-float">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hiho/" style="font-size: 16.67px;">hiho</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">链接</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="http://hexo.io">Hexo</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-    
-  </div>
-</aside>
         </div>
-      </div>
     </div>
-    <footer id="footer">
-  
-  <div class="container">
-    <div class="container-inner">
-      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-      <div class="credit">
-        <h1 class="logo-wrap">
-          <a href="/" class="logo"></a>
-        </h1>
-        <p>&copy; 2016 Silver</p>
-        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-      </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://weibo.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+					
+					
+                        <li>
+                            <a href="www.zhihu.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
+
+
+    <!-- After footer scripts -->
     
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-
-
-  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
-  <script src="/scrollLoading/main.js" type="text/javascript"></script>
-
+<!-- Disqus Comments -->
 
 
 
-<script src="/js/html-patch.js" type="text/javascript"></script>
-<script src="/js/script.js" type="text/javascript"></script>
-
-  </div>
 </body>
+
 </html>
