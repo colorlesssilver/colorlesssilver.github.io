@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-07-14T14:24:23.336Z</updated>
+  <updated>2016-07-19T08:44:33.528Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://codle.net/2016/07/14/linear-regression/"/>
     <id>http://codle.net/2016/07/14/linear-regression/</id>
     <published>2016-07-14T11:24:48.000Z</published>
-    <updated>2016-07-14T14:24:23.336Z</updated>
+    <updated>2016-07-19T08:44:33.528Z</updated>
     <content type="html"><![CDATA[<h2 id="线性回归模型">线性回归模型</h2><p>线性回归模型属于监督学习的一种，给定训练数据集，通过’学习’找出一个较精确的函数$h$来描述输入X和输出Y之间的关系，进而完成’预测’的功能，比如房屋价格预测。<br>对于一个输入变量x和一个输出变量y，可以用这样一个函数$h_\theta(x) = \theta_0 + \theta_1x$来表达，我们可以很容易地得出一个更一般的表达（即并不一定只有一个输入变量x的情况）:<br>$$h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \cdots$$<br>我们将单个输入量的情况叫做一元线性回归，多个输入量的叫做多元线性回归。</p>
 <h2 id="$\theta$参数求解">$\theta$参数求解</h2><p>对于线性回归模型，我们的最终目的是要得到一个较精确的$h_\theta(x)$函数来表示输入和输出的关系，因此，我们的工作目的就是算出合适的$\theta$参数，来使得我们的函数曲线与数据点集尽可能地耦合。</p>
 <h3 id="梯度下降法">梯度下降法</h3><h4 id="概念">概念</h4><p>这里使用梯度下降(Gradient Descent)的方法来求解参数$\theta$。梯度下降是求解无约束最优化问题的一种最常用的方法。从直观上理解就好似我们站在山顶(初始点)，希望能最快的地走到山脚(最优解)，那么我们通过每次向四周找寻一个方向（最陡的方向）走一步，找一个方向，再走一步，这样一次又一次地走到山脚。通过这样的描述很容易看出梯度下降的使用问题：可能会陷于局部最优解而无法获得全局最优解(就是说掉坑里了,HOHO)，但是对于凸函数是能求得最优解的。<br>从专业术语来描述梯度下降法就是:选取使得初始值$x^{(0)}$，不断迭代，更新$x$的值，进行目标函数的极小化，直到收敛。由于负梯度方向是使函数值下降最快的方向，在迭代的每一步，以负梯度方向更新$x$的值，从而达到减少函数值的目的。</p>
@@ -30,7 +30,8 @@
 </ul>
 <p>重复上面的操作，直到$J(\theta)$收敛的时候(可以采用画图的方法)，我们也就得到了一个较为准确的$\theta$参数。</p>
 <h4 id="代价函数$J(\theta)$">代价函数$J(\theta)$</h4><p>在线性回归中，我们使用最小二乘法的方法来当作我们的代价函数$J(\theta)$。<br>$$J(\theta) = \frac1{2m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})^2$$<br>注：<br>$$h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \cdots = \begin{bmatrix}1 &amp; x_1 &amp; x_2 \cdots &amp; x_n\end{bmatrix} \begin{bmatrix}\theta_0 \\ \theta_1 \\ \vdots \\ \theta_n\end{bmatrix}$$</p>
-<h4 id="更新参数$\theta$">更新参数$\theta$</h4><p>下降最快的方向是负梯度的方向，很容易写出:<br>$$\theta = \theta - \nabla J(\theta)$$<br>注意这里的$\theta = \begin{bmatrix}\theta_0&amp;\theta_1&amp;\theta_2&amp;\cdots&amp;\theta_n\end{bmatrix}^T$，这个公式涉及到偏导数，在进行具体实现时，我们通常转化为下面这个公式进行求解:<br>$$\theta_j = \theta_j - \alpha\frac1{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$$<br>这个分别对每个$\theta$进行求解，但是在计算的时候需要注意一定<strong>要用原始的$\theta$算完所有的$\theta$后再进行参数更新！</strong></p>
+<h4 id="更新参数$\theta$">更新参数$\theta$</h4><p>下降最快的方向是负梯度的方向，很容易写出:<br>$$\theta := \theta - \nabla J(\theta)$$<br>注意这里的$\theta = \begin{bmatrix}\theta_0&amp;\theta_1&amp;\theta_2&amp;\cdots&amp;\theta_n\end{bmatrix}^T$，这个公式涉及到偏导数，在进行具体实现时，我们通常转化为下面这个公式进行求解:<br>$$\theta_j := \theta_j - \alpha\frac1{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$$<br>这个分别对每个$\theta$进行求解，但是在计算的时候需要注意一定<strong>要用原始的$\theta$算完所有的$\theta$后再进行参数更新！</strong></p>
+<p>在实战中，对于$x = \begin{bmatrix} \cdots &amp; x^{(0)} &amp; \cdots \\ \cdots &amp; x^{(1)}&amp; \cdots \\ \cdots &amp;\cdots&amp;\cdots \\ \cdots &amp; x^{(n)}&amp;\cdots \end{bmatrix} y = \begin{bmatrix}y^{(0)}\\y^{(1)}\\ \vdots \\ x^{(n)}\end{bmatrix} \theta = \begin{bmatrix} \theta_0\\ \theta_1 \\ \vdots \\ \theta_n \end{bmatrix}$,这个公式也可以写成：<br>$$\theta := \theta - \alpha\frac1{m}(x^T(x\theta-y))$$</p>
 <h4 id="特征正则化">特征正则化</h4><p>这一步实际应该在所有步骤之前，主要用于将特征量$x$缩放至一个相对合适的大小（一般在$\pm2$之间），防止过拟合等状况出现。举个例子，也就说你一个特征量是3000左右，另一个却在0.2左右，这样算法在计算的时候很容易出现之字形下降，耗费额外的迭代次数却很难找到合适的参数。<br>常用的正则化方法为:<br>$$ x’ = \frac{x - \overline{x}}{\delta}$$<br>$\overline{x}$是特征平均值；$\delta$是特征标准差，也可以用$max-min$替代。</p>
 <h3 id="正规方程法（Normal_Equation）">正规方程法（Normal Equation）</h3><p>这里在讲一种用于解决线性回归问题的方法，叫做正规方程法。用解方程的形式来进行求解参数$\theta$，公式非常简明:<br>$$\theta = (X^TX)^{-1}X^T\vec{y}$$<br>这个方程看似简单，但是缺点却很明显：涉及对矩阵求逆。矩阵逆运算的时间复杂度为$O(n^3)$，当特征很多的时候运行效率会非常缓慢。</p>
 ]]></content>
