@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-08-02T12:39:30.467Z</updated>
+  <updated>2016-08-02T12:42:31.370Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[机器学习日志:Logistic 回归]]></title>
+    <title><![CDATA[机器学习日志：Logistic 回归]]></title>
     <link href="http://codle.net/2016/08/02/logistic-regression/"/>
     <id>http://codle.net/2016/08/02/logistic-regression/</id>
     <published>2016-08-02T12:27:46.000Z</published>
-    <updated>2016-08-02T12:39:30.467Z</updated>
+    <updated>2016-08-02T12:42:31.370Z</updated>
     <content type="html"><![CDATA[<h2 id="Logistic回归">Logistic回归</h2><p>Logistic回归(《统计学习方法》中译为逻辑斯谛回归），虽然也是回归模型，但是与线性回归模型不同，Logistic回归通过训练数据集来对数据集建立边界用于数据分类，因此主要用于分类器。<br>对于Logistic回归，我们的预测函数不再是根据特征来输出一个数据值了，而是分类的类别，比如结果类别只有两个，那么我们通过预测函数的输出值就应该是0,1。具有这种性质的函数被称为阶跃函数，瞬间阶跃可能比较难处理，我们引入另一个具有类似性质的函数Sigmoid函数。Sigmoid函数的具体计算公式如下：<br>$$\sigma(z)=\frac1{1+e^{-z}}$$<br>当$z=0$时，$\sigma(z)=0.5$，当$z$值增大时，$\sigma(z)$值逼近于$1$，随着$z$减少时，$\sigma(z)$值逼近0。如果横坐标刻度足够大，那么Sigmoid函数看起来就像阶跃函数。</p>
 <h2 id="Logistic回归模型">Logistic回归模型</h2><h3 id="模型">模型</h3><p>二项Logistic回归模型是一种分类模型，由条件概率分布$P(Y|X)$表示，形式为参数化的Logistic分布。条件概率为：<br>$$P(Y=1|x)=\frac1{1+e^{-w\cdot x}} \\P(Y=0|x)=\frac{e^{-w\cdot x}}{1+e^{-w\cdot x}}$$<br>$x\in R^n$为输入特征值，$Y\in {0,1}$是输出值，$w\in R^n$是权值参数。对于给定的输入实例$x$，Logistic回归通过比较两个条件概率值的大小来分配实例$x$到概率较大的那一类中。</p>
 <h3 id="特点">特点</h3><p>一个事件的几率(odds,the odds of experiencing an event)是指该事件发生的概率与该事件不发生的概率的比值。如果事件发生的概率为$p$，那么该事件的几率为$\frac{p}{1-p}$，该事件的对数几率（log odds）是<br>$$logit(p)=log\frac{p}{1-p}$$<br>那么针对Logistic回归，对数几率就为：<br>$$log\frac{P(Y=1|x)}{1-P(Y=1|x)}=w\cdot x$$<br>这就表示在Logistic回归模型中，输出$Y=1$的对数几率是输入$x$的线性函数。</p>
