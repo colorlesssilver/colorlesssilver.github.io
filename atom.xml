@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-08-18T14:24:27.625Z</updated>
+  <updated>2016-08-18T14:28:45.871Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://codle.net/2016/08/18/Observer/"/>
     <id>http://codle.net/2016/08/18/Observer/</id>
     <published>2016-08-18T14:22:30.000Z</published>
-    <updated>2016-08-18T14:24:27.625Z</updated>
+    <updated>2016-08-18T14:28:45.871Z</updated>
     <content type="html"><![CDATA[<h2 id="观察者模式">观察者模式</h2><p>观察者模式：在对象之间定义一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象全都收到通知，并自动更新。</p>
 <p>新学的OO原则：为交互对象之间的松耦合设计而努力。</p>
 <h2 id="实例">实例</h2><p>假设我们现在为气象局工作，我们的传感器能获得当前的温度、湿度、气压，我们需要把数据汇总在三个公告板公布出去，公告板分别公布目前的状况、气象统计及简单的预报。</p>
