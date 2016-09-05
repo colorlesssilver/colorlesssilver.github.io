@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="汇编学习工具主要有三个：
+
+DEBUG：调寄存器等等
+MASM：编译ASM文件
+LINK：链接成可执行程序
+DOSBox（只有64位系统需要）
+
+工具打包下载：下载地址在masm5文件夹中包含了汇编程序需要的工具(debug,link,masm)。
+常见问题由于汇编的程序都是16位程序，在目前的64">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Silver">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="masm-use"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codle"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>masm-use - Codle</title>
+
+    <!-- Bootstrap Core CSS -->
+	<!--
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+	-->
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	
+	
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+	<!-- Too Slow
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	-->
+	<link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.useso.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Codle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/" style="font-size:15px;">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives" style="font-size:15px;">
+                            
+                                文章
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/references" style="font-size:15px;">
+                            
+                                索引
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://weibo.com/323327275" style="font-size:15px;">
+                            
+                                <i class="fa fa-weibo fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>masm-use</h1>
+                    
+                    <h2 class="post-subheading">
+                        汇编工具分享与基本使用
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-05
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/汇编/">#汇编</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="汇编学习工具">汇编学习工具</h2><p>主要有三个：</p>
+<ul>
+<li>DEBUG：调寄存器等等</li>
+<li>MASM：编译ASM文件</li>
+<li>LINK：链接成可执行程序</li>
+<li>DOSBox（只有64位系统需要）</li>
+</ul>
+<p>工具打包下载：<a href="http://pan.baidu.com/s/1bIyQHg" target="_blank" rel="external">下载地址</a><br>在masm5文件夹中包含了汇编程序需要的工具(debug,link,masm)。</p>
+<h2 id="常见问题">常见问题</h2><p><strong>由于汇编的程序都是16位程序，在目前的64位操作系统上无法运行</strong>，所以对于32位的电脑和64位的电脑在写汇编的时候会有些不同。对于32位系统可跳过下面的步骤，而64位系统则只能通过DOSBOX软件来模拟运行汇编程序。</p>
+<h2 id="DOSBox软件">DOSBox软件</h2><p>对于64位电脑，只能通过该软件来运行汇编软件。安装后运行桌面的快捷方式，或程序目录DOSBox 0.74来运行。<br>界面如下所示：<br><img src="http://codle.net/imgs/asm/asm01.png" alt=""><br>此时盘符是在Z盘并不是电脑上的任何位置，我们需要自己来挂载盘符。<br>使用下面的命令<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="keyword">d</span> <span class="keyword">d</span>:\masm5</span><br></pre></td></tr></table></figure></p>
+<p>该命令就是把实际硬盘中d:\masm5在该软件中挂载成了d盘，我们在该软件中进入d盘就是在实际目录中进入了d:\masm5文件夹，也可以理解为对于<code>mount a x:\</code>：在命令中用a指代x:\文件夹（该部分可能比较难理解，可以使用<code>DIR</code>命令，查看当前文件夹下的所有文件与电脑资源管理器中显示的文件做对比来理解）</p>
+<h2 id="汇编软件的使用">汇编软件的使用</h2><p>对于32位电脑，<code>Win+R</code>输入<code>cmd</code>进入命令提示框，然后使用<code>cd</code>命令进入masm5文件夹(如何在命令框中跳转文件夹请自行百度)<br>对于64位电脑，运行DOSBox程序，加载masm5文件夹到盘符进入相应盘符。<br>可以自己测试一下看是否进入了相应文件夹，在命令框中输入masm然后回车，出现如下内容说明成功。在masm5文件夹中放了一个test.asm文件，一个写好的汇编文本，可以试着编译一下看有没有问题。具体操作如下：</p>
+<ol>
+<li>输入masm命令（已经输过了就不用了）</li>
+<li>输入test然后回车</li>
+<li>后面询问生成的OBJ等文件的名字都可以直接回车跳过</li>
+<li>然后输入link命令，后面的也可以直接回车跳过</li>
+<li>输入test.exe，运行我们生成的文件，此时会在左上部分出现一行绿色的字，说明成功。</li>
+</ol>
+<p>部分运行图片如下：<br><img src="http://codle.net/imgs/asm/asm02.png" alt=""><br><img src="http://codle.net/imgs/asm/asm03.png" alt=""><br><img src="http://codle.net/imgs/asm/asm04.png" alt=""><br><img src="http://codle.net/imgs/asm/asm05.png" alt=""><br><img src="http://codle.net/imgs/asm/asm06.png" alt=""></p>
+<p>DEBUG程序运行如下(自行摸索即可，学得时候才用)：<br><img src="http://codle.net/imgs/asm/debug.png" alt=""></p>
+<h2 id="补充内容">补充内容</h2><p>为了避免每次打开BDOSBox时需要挂载文件夹，可以使用记事本打开C:\Users\你的用户名\AppData\Local\DOSBox\dosbox-0.74.conf文件，在最下面添加<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="keyword">C</span> <span class="keyword">D</span>:\masm5</span><br><span class="line"><span class="keyword">C</span>:</span><br></pre></td></tr></table></figure></p>
+<p>其中D:\masm5为你下载的工具包文件夹。</p>
+<p>推荐一本书：<br>王源.《汇编语言》（第三版）.清华大学出版社<br>在下载里面也有，比教材简单点。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					
+					  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/09/05/masm-use/" data-title="masm-use" data-url="http://codle.net/2016/09/05/masm-use/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"codle2"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div> 
+					
+				</div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://weibo.com/323327275" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+					
+					
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+
+
+
+</body>
+
+</html>

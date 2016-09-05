@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-08-19T04:02:13.175Z</updated>
+  <updated>2016-09-05T10:27:01.773Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[masm-use]]></title>
+    <link href="http://codle.net/2016/09/05/masm-use/"/>
+    <id>http://codle.net/2016/09/05/masm-use/</id>
+    <published>2016-09-05T10:25:10.000Z</published>
+    <updated>2016-09-05T10:27:01.773Z</updated>
+    <content type="html"><![CDATA[<h2 id="汇编学习工具">汇编学习工具</h2><p>主要有三个：</p>
+<ul>
+<li>DEBUG：调寄存器等等</li>
+<li>MASM：编译ASM文件</li>
+<li>LINK：链接成可执行程序</li>
+<li>DOSBox（只有64位系统需要）</li>
+</ul>
+<p>工具打包下载：<a href="http://pan.baidu.com/s/1bIyQHg" target="_blank" rel="external">下载地址</a><br>在masm5文件夹中包含了汇编程序需要的工具(debug,link,masm)。</p>
+<h2 id="常见问题">常见问题</h2><p><strong>由于汇编的程序都是16位程序，在目前的64位操作系统上无法运行</strong>，所以对于32位的电脑和64位的电脑在写汇编的时候会有些不同。对于32位系统可跳过下面的步骤，而64位系统则只能通过DOSBOX软件来模拟运行汇编程序。</p>
+<h2 id="DOSBox软件">DOSBox软件</h2><p>对于64位电脑，只能通过该软件来运行汇编软件。安装后运行桌面的快捷方式，或程序目录DOSBox 0.74来运行。<br>界面如下所示：<br><img src="http://codle.net/imgs/asm/asm01.png" alt=""><br>此时盘符是在Z盘并不是电脑上的任何位置，我们需要自己来挂载盘符。<br>使用下面的命令<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="keyword">d</span> <span class="keyword">d</span>:\masm5</span><br></pre></td></tr></table></figure></p>
+<p>该命令就是把实际硬盘中d:\masm5在该软件中挂载成了d盘，我们在该软件中进入d盘就是在实际目录中进入了d:\masm5文件夹，也可以理解为对于<code>mount a x:\</code>：在命令中用a指代x:\文件夹（该部分可能比较难理解，可以使用<code>DIR</code>命令，查看当前文件夹下的所有文件与电脑资源管理器中显示的文件做对比来理解）</p>
+<h2 id="汇编软件的使用">汇编软件的使用</h2><p>对于32位电脑，<code>Win+R</code>输入<code>cmd</code>进入命令提示框，然后使用<code>cd</code>命令进入masm5文件夹(如何在命令框中跳转文件夹请自行百度)<br>对于64位电脑，运行DOSBox程序，加载masm5文件夹到盘符进入相应盘符。<br>可以自己测试一下看是否进入了相应文件夹，在命令框中输入masm然后回车，出现如下内容说明成功。在masm5文件夹中放了一个test.asm文件，一个写好的汇编文本，可以试着编译一下看有没有问题。具体操作如下：</p>
+<ol>
+<li>输入masm命令（已经输过了就不用了）</li>
+<li>输入test然后回车</li>
+<li>后面询问生成的OBJ等文件的名字都可以直接回车跳过</li>
+<li>然后输入link命令，后面的也可以直接回车跳过</li>
+<li>输入test.exe，运行我们生成的文件，此时会在左上部分出现一行绿色的字，说明成功。</li>
+</ol>
+<p>部分运行图片如下：<br><img src="http://codle.net/imgs/asm/asm02.png" alt=""><br><img src="http://codle.net/imgs/asm/asm03.png" alt=""><br><img src="http://codle.net/imgs/asm/asm04.png" alt=""><br><img src="http://codle.net/imgs/asm/asm05.png" alt=""><br><img src="http://codle.net/imgs/asm/asm06.png" alt=""></p>
+<p>DEBUG程序运行如下(自行摸索即可，学得时候才用)：<br><img src="http://codle.net/imgs/asm/debug.png" alt=""></p>
+<h2 id="补充内容">补充内容</h2><p>为了避免每次打开BDOSBox时需要挂载文件夹，可以使用记事本打开C:\Users\你的用户名\AppData\Local\DOSBox\dosbox-0.74.conf文件，在最下面添加<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="keyword">C</span> <span class="keyword">D</span>:\masm5</span><br><span class="line"><span class="keyword">C</span>:</span><br></pre></td></tr></table></figure></p>
+<p>其中D:\masm5为你下载的工具包文件夹。</p>
+<p>推荐一本书：<br>王源.《汇编语言》（第三版）.清华大学出版社<br>在下载里面也有，比教材简单点。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="汇编学习工具">汇编学习工具</h2><p>主要有三个：</p>
+<ul>
+<li>DEBUG：调寄存器等等</li>
+<li>MASM：编译ASM文件</li>
+<li>LINK：链接成可执行程序</li>
+<li>DOSBox（只有64位系统需要）</li>
+]]>
+    </summary>
+    
+      <category term="汇编" scheme="http://codle.net/tags/%E6%B1%87%E7%BC%96/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[设计模式：观察者模式]]></title>
