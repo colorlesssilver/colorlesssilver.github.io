@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-09-12T13:13:00.935Z</updated>
+  <updated>2016-09-12T13:18:19.616Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://codle.net/2016/09/12/asm-general-register/"/>
     <id>http://codle.net/2016/09/12/asm-general-register/</id>
     <published>2016-09-12T13:05:44.000Z</published>
-    <updated>2016-09-12T13:13:00.935Z</updated>
+    <updated>2016-09-12T13:18:19.616Z</updated>
     <content type="html"><![CDATA[<h2 id="通用寄存器">通用寄存器</h2><p>8086CPU的所有寄存器都是16位的，可以放两个字节。AX、BX、CX、DX这4个寄存器存放一般性数据，被称为<strong>通用寄存器</strong>。</p>
 <p>一个16位寄存器可以存16位的数据，存储数据的最大值为$2^{16}$。</p>
 <p>在8086CPU中，四个通用寄存器可以拆分成两个可独立使用的8位寄存器来用。</p>
@@ -27,7 +27,7 @@
 <li>AX拆分成AH和AL;</li>
 <li>BX拆分成BH和BL;</li>
 <li>CX拆分成CH和CL;</li>
-<li>DX拆分成DH和DL；</li>
+<li>DX拆分成DH和DL;</li>
 </ul>
 <p>AX的低8位（0-7位）构成AL寄存器，高8位（8-15位）构成了AH寄存器。</p>
 <h2 id="字在寄存器的存储">字在寄存器的存储</h2><ul>
