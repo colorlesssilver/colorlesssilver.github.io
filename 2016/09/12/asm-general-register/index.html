@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="通用寄存器8086CPU的所有寄存器都是16位的，可以放两个字节。AX、BX、CX、DX这4个寄存器存放一般性数据，被称为通用寄存器。
+一个16位寄存器可以存16位的数据，存储数据的最大值为$2^{16}$。
+在8086CPU中，四个通用寄存器可以拆分成两个可独立使用的8位寄存器来用。
+
+AX拆分成">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Silver">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="汇编语言学习笔记：通用寄存器"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codle"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>汇编语言学习笔记：通用寄存器 - Codle</title>
+
+    <!-- Bootstrap Core CSS -->
+	<!--
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+	-->
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	
+	
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+	<!-- Too Slow
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	-->
+	<link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Codle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/" style="font-size:15px;">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives" style="font-size:15px;">
+                            
+                                文章
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/references" style="font-size:15px;">
+                            
+                                索引
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://weibo.com/323327275" style="font-size:15px;">
+                            
+                                <i class="fa fa-weibo fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>汇编语言学习笔记：通用寄存器</h1>
+                    
+                    <h2 class="post-subheading">
+                        基本通用的寄存器的介绍
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/汇编语言/">#汇编语言</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="通用寄存器">通用寄存器</h2><p>8086CPU的所有寄存器都是16位的，可以放两个字节。AX、BX、CX、DX这4个寄存器存放一般性数据，被称为<strong>通用寄存器</strong>。</p>
+<p>一个16位寄存器可以存16位的数据，存储数据的最大值为$2^{16}$。</p>
+<p>在8086CPU中，四个通用寄存器可以拆分成两个可独立使用的8位寄存器来用。</p>
+<ul>
+<li>AX拆分成AH和AL;</li>
+<li>BX拆分成BH和BL;</li>
+<li>CX拆分成CH和CL;</li>
+<li>DX拆分成DH和DL；</li>
+</ul>
+<p>AX的低8位（0-7位）构成AL寄存器，高8位（8-15位）构成了AH寄存器。</p>
+<h2 id="字在寄存器的存储">字在寄存器的存储</h2><ul>
+<li>字节：记为byte，一个字节由8个bit组成，可以存在8位寄存器中。</li>
+<li>字：记为word，一个字由两个字节组成，这两个字节分别称为这个字的高字位和低字位。</li>
+</ul>
+<p>对于字型数据20000而言，转为二进制数就是0100 1110 0010 0000，换成16进制就是4E20H，那么AH存放4E，AL存放20。</p>
+<h2 id="物理地址与逻辑地址">物理地址与逻辑地址</h2><p>8086CPU是16位结构处理器，可以最多处理16位的数据，寄存器的最大宽度是16位，寄存器和运算器之间的通路也是16位。但是对于8086CPU地址总线的宽度是20位，为此采用将两个16位地址合成来形成一个20位的物理地址，这两个16位地址也被成为逻辑地址。</p>
+<p>地址加法器采用<strong>物理地址=段地址x16+偏移地址</strong>的方法来合成一个物理地址。段地址x16也就相当于把这个数据向左移4位，然后加上一个偏移地址形成一个20位地址。</p>
+<p>段地址：偏移地址这种便是我们常用的编程用的逻辑地址，段的划分能方便我们更好的管理内存。段地址x16必然是16的倍数，所以一个段的起始地址也一定是16的倍数；偏移地址为16位，16位地址的寻址能力为64KB，所以一个段的长度最大为64KB。</p>
+<h2 id="CS：IP">CS：IP</h2><p>CS和IP是8086CPU中两个最关键的寄存器，CS为代码段寄存器，IP为指令指针寄存器。若CS中的内容为M，IP中的内容为N，8086CPU将从Mx16+N单元开始读取一条指令并执行。</p>
+<p>具体执行步骤：</p>
+<ol>
+<li>从CS：IP指向的内存单元读取指令，读取的指令进入指令缓冲器；</li>
+<li>IP=IP+所读取指令的长度，从而指向下一条指令；</li>
+<li>执行指令，转到步骤1，重复这个过程；</li>
+</ol>
+<h2 id="一些基本指令">一些基本指令</h2><p>MOV AX， 826CH ———将826CH存到AX寄存器中<br>MOV BX， AX    ———将AX寄存器内容存到BX中<br>ADD BX， AX    ———将AX加到BX上，BX存的值会改变</p>
+<p>JMP 2AE3:3     ———执行后，CS=2AE3H，IP=0003H，系统将从2AE33H处读取指令<br>JMP AX，       ———执行后只有IP会改变成AX的值</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					
+					  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/09/12/asm-general-register/" data-title="汇编语言学习笔记：通用寄存器" data-url="http://codle.net/2016/09/12/asm-general-register/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"codle2"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div> 
+					
+				</div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://weibo.com/323327275" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+					
+					
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+
+</html>
