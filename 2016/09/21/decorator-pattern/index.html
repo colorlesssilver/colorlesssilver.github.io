@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="装饰者模式装饰者模式：动态地将责任附加到对象上。若要拓展功能，装饰者提供了比继承更有弹性的替代方案。
+新的OO原则：对拓展开放，对修改关闭。
+实例咖啡厅有不同种类的咖啡以及不同种类的配料，顾客来点咖啡可以按照自己的喜好点不同的配料。菜单如下：
+咖啡：
+
+综合 0.89
+深焙 0.99
+低咖啡因 1.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Silver">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="设计模式：装饰者模式"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codle"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>设计模式：装饰者模式 - Codle</title>
+
+    <!-- Bootstrap Core CSS -->
+	<!--
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+	-->
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	
+	
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+	<!-- Too Slow
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	-->
+	<link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Codle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/" style="font-size:15px;">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives" style="font-size:15px;">
+                            
+                                文章
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/references" style="font-size:15px;">
+                            
+                                索引
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://weibo.com/323327275" style="font-size:15px;">
+                            
+                                <i class="fa fa-weibo fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>设计模式：装饰者模式</h1>
+                    
+                    <h2 class="post-subheading">
+                        层层包装对象的设计艺术
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-21
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/设计模式/">#设计模式</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="装饰者模式">装饰者模式</h2><p>装饰者模式：动态地将责任附加到对象上。若要拓展功能，装饰者提供了比继承更有弹性的替代方案。</p>
+<p>新的OO原则：对拓展开放，对修改关闭。</p>
+<h2 id="实例">实例</h2><p>咖啡厅有不同种类的咖啡以及不同种类的配料，顾客来点咖啡可以按照自己的喜好点不同的配料。菜单如下：</p>
+<p>咖啡：</p>
+<ul>
+<li>综合 0.89</li>
+<li>深焙 0.99</li>
+<li>低咖啡因 1.05</li>
+<li>浓缩 1.99</li>
+</ul>
+<p>配料：</p>
+<ul>
+<li>牛奶 0.10</li>
+<li>摩卡 0.20</li>
+<li>豆浆 0.15</li>
+<li>奶泡 0.10</li>
+</ul>
+<p>用户对配料的有可能有多重要求，比如要一杯双倍摩卡豆浆奶泡拿铁咖啡，那么就需要加入很多配料，你的对象也应该根据相应的配料来完善。</p>
+<p>设计思想就是主题作为一个基准，然后把配料作为插件类，需要这个配料就把配料插入到基准类。所谓装饰也就是把主题传入包装类，包装主体后作为一个主体，再去包装，一层接一层地完成这个配料的添加。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//饮料本体基类</span></span><br><span class="line"><span class="keyword">class</span> Beverage&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">string</span> description = <span class="string">"Unknown Beverage"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> description;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//配料本体基类</span></span><br><span class="line"><span class="keyword">class</span> CondimentDecorator: <span class="keyword">public</span> Beverage&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//压缩咖啡类</span></span><br><span class="line"><span class="keyword">class</span> Espresso: <span class="keyword">public</span> Beverage&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Espresso()&#123;</span><br><span class="line">		description = <span class="string">"Espresso"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1.99</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//综合咖啡类</span></span><br><span class="line"><span class="keyword">class</span> HouseBlend: <span class="keyword">public</span> Beverage&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	HouseBlend()&#123;</span><br><span class="line">		description = <span class="string">"House Blend Coffee"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0.89</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//摩卡咖啡类</span></span><br><span class="line"><span class="keyword">class</span> Mocha: <span class="keyword">public</span> CondimentDecorator&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Beverage* beverage;</span><br><span class="line"></span><br><span class="line">	Mocha(Beverage* beverage)&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;beverage = beverage;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> beverage-&gt;getDescription() + <span class="string">",Mocha"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0.2</span> + beverage-&gt;cost();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//豆浆配料类</span></span><br><span class="line"><span class="keyword">class</span> Soy: <span class="keyword">public</span> CondimentDecorator&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Beverage* beverage;</span><br><span class="line"></span><br><span class="line">	Soy(Beverage* beverage)&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;beverage = beverage;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> beverage-&gt;getDescription() + <span class="string">",Soy"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> beverage-&gt;cost() + <span class="number">0.15</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//奶泡配料类</span></span><br><span class="line"><span class="keyword">class</span> Whip: <span class="keyword">public</span> CondimentDecorator&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Beverage* beverage;</span><br><span class="line"></span><br><span class="line">	Whip(Beverage* beverage)&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;beverage = beverage;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> beverage-&gt;getDescription() + <span class="string">",Whip"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> beverage-&gt;cost() + <span class="number">0.1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Beverage* beverage = <span class="keyword">new</span> Espresso;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; beverage-&gt;getDescription() &lt;&lt; <span class="string">" "</span> &lt;&lt; beverage-&gt;cost() &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">	Beverage* beverage2 = <span class="keyword">new</span> Espresso;</span><br><span class="line">	beverage2 = <span class="keyword">new</span> Mocha(beverage2);</span><br><span class="line">	beverage2 = <span class="keyword">new</span> Mocha(beverage2);</span><br><span class="line">	beverage2 = <span class="keyword">new</span> Whip(beverage2);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; beverage2-&gt;getDescription() &lt;&lt; <span class="string">" "</span> &lt;&lt; beverage2-&gt;cost() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	Beverage* beverage3 = <span class="keyword">new</span> HouseBlend;</span><br><span class="line">	beverage3 = <span class="keyword">new</span> Soy(beverage3);</span><br><span class="line">	beverage3 = <span class="keyword">new</span> Mocha(beverage3);</span><br><span class="line">	beverage3 = <span class="keyword">new</span> Whip(beverage3);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; beverage3-&gt;getDescription() &lt;&lt; <span class="string">" "</span> &lt;&lt; beverage3-&gt;cost() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					
+					  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/09/21/decorator-pattern/" data-title="设计模式：装饰者模式" data-url="http://codle.net/2016/09/21/decorator-pattern/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"codle2"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div> 
+					
+				</div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://weibo.com/323327275" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+					
+					
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+
+
+
+</body>
+
+</html>
