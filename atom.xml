@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-09-21T12:09:52.072Z</updated>
+  <updated>2016-10-08T06:30:06.719Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[LeetCode：#1 Two Sum]]></title>
+    <link href="http://codle.net/2016/10/08/leetcode-two-sum/"/>
+    <id>http://codle.net/2016/10/08/leetcode-two-sum/</id>
+    <published>2016-10-08T06:22:30.000Z</published>
+    <updated>2016-10-08T06:30:06.719Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目与样例">题目与样例</h2><p>原题地址：<a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">LeetCode 1.Two Sum</a></p>
+<p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have <strong>exactly</strong> one solution.</p>
+<p>中文大意：给一个数组和一个数，从数组中找出两个数之和等于这个给的数，返回数组中这两个数的索引。</p>
+<p><strong>Example</strong>：<br>Given nums = [2, 7, 11, 15], target = 9,</p>
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
+<h2 id="解法1：暴力法">解法1：暴力法</h2><p>题目已经很明白了，我们用两次循环来对每每两个数求和来判断与给定数target比较，相同则返回索引即可，这是最容易想的一种方法。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size()-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(target-nums[i]==nums[j])&#123;</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                ans.push_back(j);</span><br><span class="line">                <span class="keyword">return</span> ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法的时间复杂度为$O(n^2)$，空间复杂度为$O(1)$。</p>
+<h2 id="解法2：两次循环+哈希表">解法2：两次循环+哈希表</h2><p>对于刚才的方法，我们是在有一个数的基础上，遍历数组去找另一个数，查找的效率是$O(n)$，对此我们可以从查找效率上想办法进行优化下，我们知道哈希表的查找效率是$O(1)$，那么就用哈希表来进行查找。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; hash;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        hash[nums[i]] = i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(hash.find(target-nums[i])!=hash.end()&amp;&amp;hash.find(target-nums[i])-&gt;second!=i)&#123;</span><br><span class="line">            ans.push_back(i);</span><br><span class="line">            ans.push_back(hash.find(target-nums[i])-&gt;second);</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先用一个循环来构建一个哈希表，在C11标准中，推荐使用unordered_map来代替hash_map。表的key值为数组中的数，val值为索引号，这样我查到了对应的key就能知道它在数组中的位置。</p>
+<p>这种方法的时间复杂度为$O(n)$，因为查找的复杂度是$O(1)$,空间复杂度是$O(n)$因为构建了一张哈希表。</p>
+<h2 id="解法3：一次循环+哈希表">解法3：一次循环+哈希表</h2><p>我们可以把建表的过程放进查找的过程中，在具体实现时，我们可以考虑一些小技巧，比如在上种方法中判断中有两个条件，其中第二个条件是为了防止出现自己加上自己刚好等于结果的情况发生。我们在一边建表一边查询的方法中，如果把建表过程放在查询后，即查询不到自己，就能避免自己加自己的情况发生，代码也显得更加简练。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; hash;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(hash.find(target-nums[i])!=hash.end())&#123;</span><br><span class="line">            ans.push_back(hash.find(target-nums[i])-&gt;second);</span><br><span class="line">            ans.push_back(i);</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        hash[nums[i]] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度和空间复杂度如解法2一样，都是$O(n)$。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目与样例">题目与样例</h2><p>原题地址：<a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">LeetCode 1.Two Sum</a></p>
+]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[设计模式：装饰者模式]]></title>
