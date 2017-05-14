@@ -4,7 +4,7 @@
   <subtitle><![CDATA[无比芜杂的心绪]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://codle.net/"/>
-  <updated>2016-10-14T10:03:32.201Z</updated>
+  <updated>2016-12-18T12:32:26.950Z</updated>
   <id>http://codle.net/</id>
   
   <author>
@@ -13,6 +13,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[基于Cocos2d-x的45度视角迷宫游戏]]></title>
+    <link href="http://codle.net/2016/12/07/cocos2dx-game-demo/"/>
+    <id>http://codle.net/2016/12/07/cocos2dx-game-demo/</id>
+    <published>2016-12-07T11:08:50.000Z</published>
+    <updated>2016-12-18T12:32:26.950Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>用了一周时间补完了暑假欠下的债，真是心累。主要完成了一个Cocos2d-x的小游戏Demo，手忙脚乱的以至于操作系统的考试也考砸了。游戏功能比较少，图部分自己做的，会传到Github上去，主要完成了一个迷宫游戏，实现了45度视角的自由移动，下面说点游戏的主要代码，其余部分自己上Github上看代码即可。</p>
+<h2 id="道路边缘碰撞">道路边缘碰撞</h2><p>采用了Hexel2软件来制作的地图，本以为能和官方推荐的地图制作工具Tiled能很好地融合在一起，最后发现两个软件的方块设定上截然不同，很难先用Hexel做成素材然后用Tiled去贴。最终选择了自己来写道路边缘碰撞。</p>
+<p>主要的思路就是我自己先做一张路径图（尺寸和实际地图相同）然后其余部分都是透明的，那么就在每次移动之前判定移动的下一个地点的路径图的是否是透明的。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p>用了一周时间补完了暑假欠下的债，真是心累。主要完成了一个Cocos2d-x的小游戏Demo，手忙脚乱的以至于操作系统的考试也考砸了。游戏功能比较少，图部分自己做的，会传到Github上去，主要完成了一个迷宫游戏，实现了45度视角的自由移]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[LeetCode：#1 Two Sum]]></title>
